@@ -5,6 +5,11 @@ import {
 
 import { rootRouteRef } from './routes';
 
+/**
+ * Confluence search frontend plugin
+ *
+ * @public
+ */
 export const searchConfluenceFrontendPlugin = createPlugin({
   id: 'search-confluence-frontend',
   routes: {
@@ -12,11 +17,17 @@ export const searchConfluenceFrontendPlugin = createPlugin({
   },
 });
 
-export const SearchConfluenceFrontendPage = searchConfluenceFrontendPlugin.provide(
-  createRoutableExtension({
-    name: 'SearchConfluenceFrontendPage',
-    component: () =>
-      import('./components/ExampleComponent').then(m => m.ExampleComponent),
-    mountPoint: rootRouteRef,
-  }),
-);
+/**
+ * Confluence search frontend page
+ *
+ * @public
+ */
+export const SearchConfluenceFrontendPage =
+  searchConfluenceFrontendPlugin.provide(
+    createRoutableExtension({
+      name: 'SearchConfluenceFrontendPage',
+      component: () =>
+        import('./components/ExampleComponent').then(m => m.ExampleComponent),
+      mountPoint: rootRouteRef,
+    }),
+  );

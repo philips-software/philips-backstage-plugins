@@ -1,1 +1,4 @@
-export { searchConfluenceFrontendPlugin, SearchConfluenceFrontendPage } from './plugin';
+export {
+  searchConfluenceFrontendPlugin,
+  SearchConfluenceFrontendPage,
+} from './plugin';

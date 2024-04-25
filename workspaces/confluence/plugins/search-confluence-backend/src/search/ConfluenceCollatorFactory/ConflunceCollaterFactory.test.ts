@@ -151,10 +151,12 @@ describe('Testing ConfluenceCollatorFactory', () => {
       results: [{ _links: { self: 'doc1' } }, { _links: { self: 'doc2' } }],
       _links: { next: null },
     };
-    const confluenceCollatorFactory =
-      await setupConfluenceCollatorFactory(mockValue);
-    const documents =
-      await confluenceCollatorFactory.getDocumentsFromSpace('space1');
+    const confluenceCollatorFactory = await setupConfluenceCollatorFactory(
+      mockValue,
+    );
+    const documents = await confluenceCollatorFactory.getDocumentsFromSpace(
+      'space1',
+    );
     expect(documents).toContain('doc1');
     expect(documents).toContain('doc2');
   });
@@ -163,11 +165,13 @@ describe('Testing ConfluenceCollatorFactory', () => {
     const mockValue = {
       _links: { next: null },
     };
-    const confluenceCollatorFactory =
-      await setupConfluenceCollatorFactory(mockValue);
+    const confluenceCollatorFactory = await setupConfluenceCollatorFactory(
+      mockValue,
+    );
 
-    const documents =
-      await confluenceCollatorFactory.getDocumentsFromSpace('space1');
+    const documents = await confluenceCollatorFactory.getDocumentsFromSpace(
+      'space1',
+    );
 
     expect(documents).toBeDefined();
     expect(documents.length).toBe(0); // No documents should be returned because results is missing
@@ -189,8 +193,9 @@ describe('Testing ConfluenceCollatorFactory', () => {
         _links: { next: null },
       });
 
-    const documents =
-      await confluenceCollatorFactory.getDocumentsFromSpace('space1');
+    const documents = await confluenceCollatorFactory.getDocumentsFromSpace(
+      'space1',
+    );
 
     expect(documents).toContain('doc1');
     expect(documents).toContain('doc2');
@@ -213,8 +218,9 @@ describe('Testing ConfluenceCollatorFactory', () => {
       _links: { webui: '/doc1' },
     });
 
-    const documentInfo =
-      await confluenceCollatorFactory.getDocumentInfo('doc1');
+    const documentInfo = await confluenceCollatorFactory.getDocumentInfo(
+      'doc1',
+    );
     expect(documentInfo.length).toBe(1);
     expect(documentInfo[0].title).toBe('doc1');
     expect(documentInfo[0].spaceName).toBe('space1');
@@ -234,8 +240,9 @@ describe('Testing ConfluenceCollatorFactory', () => {
       _links: { webui: '/doc1' },
     });
 
-    const documentInfo =
-      await confluenceCollatorFactory.getDocumentInfo('doc1');
+    const documentInfo = await confluenceCollatorFactory.getDocumentInfo(
+      'doc1',
+    );
 
     expect(documentInfo).toBeDefined();
     expect(documentInfo.length).toBe(0); // No document info should be returned because status is missing

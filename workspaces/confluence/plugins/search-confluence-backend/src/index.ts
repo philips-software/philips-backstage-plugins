@@ -1,4 +1,1 @@
-export {
-  ConfluenceCollatorFactory,
-  confluenceDefaultSchedule,
-} from './search/ConfluenceCollatorFactory';
+export { confluencePlugin as default } from './plugin';
