@@ -1,0 +1,19 @@
+{
+  "name": "@philips-software/philips-backstage-plugins",
+  "private": true,
+  "version": "0.0.0",
+  "repository": "git@github.com:philips-software/philips-backstage-plugins.git",
+  "engines": {
+    "node": "18 || 20"
+  },
+  "scripts": {
+    "create-workspace": "community-cli workspace create"
+  },
+  "type": "module",
+  "packageManager": "yarn@3.2.3",
+  "dependencies": {
+    "@backstage-community/cli": "portal:./workspaces/repo-tools/packages/cli",
+    "@backstage/cli-node": "^0.2.2",
+    "@changesets/parse": "^0.4.0"
+  }
+}

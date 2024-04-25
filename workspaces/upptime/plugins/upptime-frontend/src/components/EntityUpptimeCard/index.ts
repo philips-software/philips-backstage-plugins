@@ -1,0 +1,1 @@
+export { EntityUpptimeCard } from './EntityUpptimeCard';
