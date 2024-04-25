@@ -2,7 +2,7 @@ name: Cron
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: "*/5 * * * *"
 
 jobs:
   cron:
@@ -15,6 +15,6 @@ jobs:
 
       - uses: backstage/actions/cron@v0.6.10
         with:
-          app-id: ${{ secrets.BACKSTAGE_GOALIE_APPLICATION_ID }}
-          private-key: ${{ secrets.BACKSTAGE_GOALIE_PRIVATE_KEY }}
-          installation-id: ${{ secrets.BACKSTAGE_GOALIE_INSTALLATION_ID }}
+          app-id: ${{ secrets.BACKSTAGE_BOT_APPLICATION_ID }}
+          private-key: ${{ secrets.BACKSTAGE_BOT_PRIVATE_KEY }}
+          installation-id: ${{ secrets.BACKSTAGE_BOT_INSTALLATION_ID }}

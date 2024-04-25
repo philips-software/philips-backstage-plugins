@@ -25,8 +25,8 @@ jobs:
       - name: PR sync
         uses: backstage/actions/pr-sync@v0.6.10
         with:
-          github-token: ${{ secrets.GH_SERVICE_ACCOUNT_TOKEN  }}
-          app-id: ${{ secrets.BACKSTAGE_GOALIE_APPLICATION_ID }}
-          private-key: ${{ secrets.BACKSTAGE_GOALIE_PRIVATE_KEY }}
-          installation-id: ${{ secrets.BACKSTAGE_GOALIE_INSTALLATION_ID }}
+          github-token: ${{ secrets.GITHUB_TOKEN  }}
+          app-id: ${{ secrets.BACKSTAGE_BOT_APPLICATION_ID }}
+          private-key: ${{ secrets.BACKSTAGE_BOT_PRIVATE_KEY }}
+          installation-id: ${{ secrets.BACKSTAGE_BOT_INSTALLATION_ID }}
           auto-assign: false

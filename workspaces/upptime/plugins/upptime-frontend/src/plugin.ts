@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 import {
   createApiFactory,
   createComponentExtension,
@@ -10,7 +9,11 @@ import {
 import { upptimeApiRef } from './api';
 import { UpptimeClient } from './api/UpptimeClient';
 
-/** @public */
+/**
+ * Upptime frontend plugin
+ *
+ * @public
+ */
 export const upptimePlugin = createPlugin({
   id: 'upptimePlugin',
   apis: [
@@ -29,6 +32,11 @@ export const upptimePlugin = createPlugin({
   ],
 });
 
+/**
+ * Upptime Entity card
+ *
+ * @public
+ */
 export const EntityUpptimeCard = upptimePlugin.provide(
   createComponentExtension({
     name: 'EntityUpptimeCard',

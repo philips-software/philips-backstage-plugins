@@ -45,7 +45,16 @@ const getStatus = (color: string) => {
   }
 };
 
+/**
+ * Properties for the EntityUpptimeCard
+ *
+ * @public
+ */
 export interface EntityUpptimeCardProps {
+  /**
+   * Upptime frontend plugin
+   * @public
+   */
   showAnnotationHelp?: boolean;
 }
 

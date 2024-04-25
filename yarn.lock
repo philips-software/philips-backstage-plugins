@@ -1632,9 +1632,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage-community/cli@portal:./workspaces/repo-tools/packages/cli::locator=%40philips-software%2Fbackstage-plugins%40workspace%3A.":
+"@backstage-community/cli@portal:./workspaces/repo-tools/packages/cli::locator=%40philips-software%2Fphilips-backstage-plugins%40workspace%3A.":
   version: 0.0.0-use.local
-  resolution: "@backstage-community/cli@portal:./workspaces/repo-tools/packages/cli::locator=%40philips-software%2Fbackstage-plugins%40workspace%3A."
+  resolution: "@backstage-community/cli@portal:./workspaces/repo-tools/packages/cli::locator=%40philips-software%2Fphilips-backstage-plugins%40workspace%3A."
   dependencies:
     "@backstage/cli": ^0.26.2
     "@backstage/errors": ^1.2.4

@@ -6,6 +6,11 @@ import {
 import { createRouter } from './service/router';
 import { CatalogClient } from '@backstage/catalog-client';
 
+/**
+ * Upptime backend plugin
+ *
+ * @public
+ */
 export const upptimeBackend = createBackendPlugin({
   pluginId: 'upptime',
   register(env) {

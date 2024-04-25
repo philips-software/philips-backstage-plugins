@@ -9,9 +9,15 @@
     "main": "dist/index.esm.js",
     "types": "dist/index.d.ts"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/philips-software/philips-backstage-plugins",
+    "directory": "workspaces/upptime/plugins/upptime-frontend"
+  },
   "backstage": {
     "role": "frontend-plugin"
   },
+  "sideEffects": false,
   "scripts": {
     "start": "backstage-cli package start",
     "build": "backstage-cli package build",
@@ -32,11 +38,6 @@
     "@material-ui/lab": "^4.0.0-alpha.61",
     "react-use": "^17.2.4"
   },
-  "peerDependencies": {
-    "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
-    "react-dom": "^16.13.1 || ^17.0.2",
-    "react-router-dom": "^6.14.1"
-  },
   "devDependencies": {
     "@backstage/cli": "^0.26.2",
     "@backstage/core-app-api": "^1.12.3",
@@ -46,7 +47,15 @@
     "@testing-library/react": "^12.1.3",
     "@types/node": "*",
     "cross-fetch": "^4.0.0",
-    "jest-fetch-mock": "^3.0.3"
+    "jest-fetch-mock": "^3.0.3",
+    "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+    "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+    "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
   },
   "files": [
     "dist"
