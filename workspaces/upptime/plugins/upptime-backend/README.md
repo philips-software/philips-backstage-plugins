@@ -14,7 +14,7 @@ yarn add --cwd packages/backend @philips-software/backstage-plugin-upptime-backe
 You can then add the follwoing to your backend configuration in `backend/src/index.ts`:
 
 ```typescript
-backend.add('@philips-software/backstage-plugin-upptime-backend';
+backend.add(import('@philips-software/backstage-plugin-upptime-backend'));
 ```
 
 ### Configuration
