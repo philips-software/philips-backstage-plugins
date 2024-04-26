@@ -11,14 +11,14 @@ you already have in place in your backend, for instance GitHub app authenticatio
 
 ```bash
 # From your Backstage root directory
-yarn add --cwd packages/app @philips-software/plugin-upptime-frontend
+yarn add --cwd packages/app @philips-software/backstage-plugin-upptime-frontend
 ```
 
 2. Add the `EntityUpptimeCard` to the EntityPage:
 
 ```diff
   // packages/app/src/components/catalog/EntityPage.tsx
-+ import { EntityUpptimeCard } from '@backstage/plugin-upptime-frontend';
++ import { EntityUpptimeCard } from '@philips-software/backstage-plugin-upptime-frontend';
 
  ...
 
