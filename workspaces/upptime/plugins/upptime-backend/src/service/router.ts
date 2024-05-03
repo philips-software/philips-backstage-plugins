@@ -7,7 +7,7 @@ import { NotFoundError } from '@backstage/errors';
 import { UpptimeAPI } from '../api/UpptimeAPI';
 import { Entity } from '@backstage/catalog-model';
 import * as path from 'path';
-import { LoggerService } from '@backstage/backend-plugin-api';
+import { AuthService, LoggerService } from '@backstage/backend-plugin-api';
 import { UPPTIME_ANNOTATION } from '../constants';
 
 export interface RouterOptions {
@@ -15,10 +15,8 @@ export interface RouterOptions {
   catalog: CatalogApi;
   config: Config;
   reader: UrlReader;
+  auth: AuthService;
 }
-
-const getBearerToken = (header?: string): string | undefined =>
-  header?.match(/Bearer\s+(\S+)/i)?.[1];
 
 const getUpptimeAnnotation = (entity: Entity): string | undefined =>
   entity.metadata.annotations![UPPTIME_ANNOTATION];
@@ -32,7 +30,7 @@ const getUrlFromBase = (baseUrl: string, pathSegments: string[]) => {
 export async function createRouter(
   options: RouterOptions,
 ): Promise<express.Router> {
-  const { logger, catalog, reader, config } = options;
+  const { logger, catalog, reader, config, auth } = options;
 
   const upptimeAPi = UpptimeAPI.fromConfig(config, logger);
 
@@ -42,9 +40,14 @@ export async function createRouter(
   router.get('/summary/:kind/:namespace/:name', async (req, res) => {
     const { kind, namespace, name } = req.params;
 
+    const { token } = await auth.getPluginRequestToken({
+      onBehalfOf: await auth.getOwnServiceCredentials(),
+      targetPluginId: 'catalog',
+    });
+
     const key = await resolveEntityAndGetAnnotation(
       { kind, namespace, name },
-      req.headers.authorization as string,
+      token,
     );
 
     const { baseUrl, instanceName, instanceKey } =
@@ -81,9 +84,14 @@ export async function createRouter(
   router.get('/summary/:kind/:namespace/:name/graph', async (req, res) => {
     const { kind, namespace, name } = req.params;
 
+    const { token } = await auth.getPluginRequestToken({
+      onBehalfOf: await auth.getOwnServiceCredentials(),
+      targetPluginId: 'catalog',
+    });
+
     const key = await resolveEntityAndGetAnnotation(
       { kind, namespace, name },
-      req.headers.authorization as string,
+      token,
     );
     const { baseUrl, instanceName, instanceKey } =
       upptimeAPi.getBaseUrlAndKey(key);
@@ -127,7 +135,7 @@ export async function createRouter(
       entity = await catalog.getEntityByRef(
         { namespace, kind, name },
         {
-          token: getBearerToken(token),
+          token,
         },
       );
       // When the entity is not found it resolves with undefined rather than rejecting

@@ -21,8 +21,9 @@ export const upptimeBackend = createBackendPlugin({
         discovery: coreServices.discovery,
         httpRouter: coreServices.httpRouter,
         reader: coreServices.urlReader,
+        auth: coreServices.auth,
       },
-      async init({ logger, config, discovery, httpRouter, reader }) {
+      async init({ logger, config, discovery, httpRouter, reader, auth }) {
         const catalog = new CatalogClient({
           discoveryApi: discovery,
         });
@@ -32,8 +33,13 @@ export const upptimeBackend = createBackendPlugin({
             catalog,
             config,
             reader,
+            auth,
           }),
         );
+        httpRouter.addAuthPolicy({
+          path: '/summary/:kind/:namespace/:name/graph',
+          allow: 'user-cookie',
+        });
       },
     });
   },
