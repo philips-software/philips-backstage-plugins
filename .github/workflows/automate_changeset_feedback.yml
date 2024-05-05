@@ -43,7 +43,7 @@ jobs:
           diff-ref: "origin/main"
           marker: <!-- changeset-feedback -->
           issue-number: ${{ github.event.pull_request.number }}
-          bot-username: backstage-bot[bot]
+          bot-username: philips-backstage-plugins-bot[bot]
           app-id: ${{ secrets.BACKSTAGE_BOT_APPLICATION_ID }}
           private-key: ${{ secrets.BACKSTAGE_BOT_PRIVATE_KEY }}
           installation-id: ${{ secrets.BACKSTAGE_BOT_INSTALLATION_ID }}
