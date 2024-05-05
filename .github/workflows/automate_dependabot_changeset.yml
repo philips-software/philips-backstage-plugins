@@ -31,3 +31,4 @@ jobs:
         uses: philips-software/backstage-actions/renovate-changesets@main
         with:
           multiple-workspaces: true
+          dependency-manager: dependabot
