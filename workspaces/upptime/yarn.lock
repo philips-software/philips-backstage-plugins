@@ -2753,7 +2753,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/catalog-client@npm:^1.6.3, @backstage/catalog-client@npm:^1.6.4":
+"@backstage/catalog-client@npm:^1.6.4":
   version: 1.6.4
   resolution: "@backstage/catalog-client@npm:1.6.4"
   dependencies:
@@ -2762,6 +2762,18 @@ __metadata:
     cross-fetch: ^4.0.0
     uri-template: ^2.0.0
   checksum: af3537d04f0abd6e6f3e49c7623994cc83db6efb2776fff5d59faee26c598840486e42a99c2bbb4a1b6ff97ad97ac857e913830cad62cda7cd71eef74cf2e179
+  languageName: node
+  linkType: hard
+
+"@backstage/catalog-client@npm:^1.6.5":
+  version: 1.6.5
+  resolution: "@backstage/catalog-client@npm:1.6.5"
+  dependencies:
+    "@backstage/catalog-model": ^1.5.0
+    "@backstage/errors": ^1.2.4
+    cross-fetch: ^4.0.0
+    uri-template: ^2.0.0
+  checksum: afb84382c7a8e9124090d56ec4a3a1e8ab7dfda33d337851412b9ee4fca0e85fb7263729d6eb4efa8c3198343ed03843ef468492f74401951542908534febfad
   languageName: node
   linkType: hard
 
@@ -2774,6 +2786,18 @@ __metadata:
     ajv: ^8.10.0
     lodash: ^4.17.21
   checksum: 34aaa4b82d29bf3b0a4b52552f8eb8189041df826f87a7bbdef5107a1efb8ce1f7eb1c1a343868718ca2af9be76d9f5184f6a92076d893d3a3951d16881647b7
+  languageName: node
+  linkType: hard
+
+"@backstage/catalog-model@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "@backstage/catalog-model@npm:1.5.0"
+  dependencies:
+    "@backstage/errors": ^1.2.4
+    "@backstage/types": ^1.1.1
+    ajv: ^8.10.0
+    lodash: ^4.17.21
+  checksum: 545873625afbb25a2142af9f8c701547b448fe8b822c9ed699c86a9c385571014115a2c3105a3dca2bc2ac63b837b093dba39a973c2f9e23521d427a0328ba12
   languageName: node
   linkType: hard
 
@@ -5632,7 +5656,7 @@ __metadata:
   dependencies:
     "@backstage/backend-common": ^0.21.6
     "@backstage/backend-plugin-api": ^0.6.16
-    "@backstage/catalog-client": ^1.6.3
+    "@backstage/catalog-client": ^1.6.5
     "@backstage/catalog-model": ^1.4.5
     "@backstage/cli": ^0.26.2
     "@backstage/config": ^1.2.0
