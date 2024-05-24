@@ -10,6 +10,7 @@ import { Entity } from '@backstage/catalog-model';
 import { createRouter } from './router';
 import { ConfigReader } from '@backstage/config';
 import { CatalogApi } from '@backstage/catalog-client';
+import { AuthService } from '@backstage/backend-plugin-api';
 
 describe('createRouter', () => {
   let app: express.Express;
@@ -25,32 +26,33 @@ describe('createRouter', () => {
     readTree: jest.fn(),
     search: jest.fn(),
   };
-
-  beforeAll(async () => {
-    const config = new ConfigReader({
-      upptime: {
-        locations: {
-          default: {
-            url: 'https://myrepo.com/myorg/myrepo',
-          },
-          status: {
-            url: 'https://anotherrepo.com/myorg/status',
-          },
+  const auth = {
+    getPluginRequestToken: jest.fn(),
+    getOwnServiceCredentials: jest.fn(),
+  };
+  const config = new ConfigReader({
+    upptime: {
+      locations: {
+        default: {
+          url: 'https://myrepo.com/myorg/myrepo',
+        },
+        status: {
+          url: 'https://anotherrepo.com/myorg/status',
         },
       },
-    });
-
+    },
+  });
+  beforeEach(async () => {
+    jest.resetAllMocks();
+    auth.getPluginRequestToken.mockResolvedValue({ token: 'mytoken' });
     const router = await createRouter({
       logger: getVoidLogger(),
       catalog: catalogApi,
       config,
       reader: mockUrlReader,
+      auth: auth as unknown as AuthService,
     });
     app = express().use(router);
-  });
-
-  beforeEach(() => {
-    jest.resetAllMocks();
   });
 
   describe('GET /summary', () => {
@@ -125,7 +127,7 @@ describe('createRouter', () => {
       expect(mockCatalogApi.getEntityByRef).toHaveBeenCalledWith(
         expect.anything(),
         expect.objectContaining({
-          token: 'mybearertoken',
+          token: 'mytoken',
         }),
       );
     });

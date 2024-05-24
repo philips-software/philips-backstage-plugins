@@ -4,7 +4,7 @@ This repository is a collection of Philips plugins for Backstage. It is a commun
 
 ## Repository layout
 
-`community-plugins` is formed by a set of workspaces. A workspace holds a plugin or a set of plugins based on a specific topic. For example, catalog, kubernetes, and TechDocs can be referred to as workspaces.
+This repository is formed by a set of workspaces. A workspace holds a plugin or a set of plugins based on a specific topic. For example, catalog, kubernetes, and TechDocs can be referred to as workspaces.
 Each plugin belongs to a workspace and workspaces are portable enough to be moved to its own repo if desired.
 
 ## Release Management

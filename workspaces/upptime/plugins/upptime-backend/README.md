@@ -8,68 +8,13 @@ This plugin needs to be added to an existing backstage instance.
 
 ```bash
 # From your Backstage root directory
-yarn add --cwd packages/backend @backstage/plugin-upptime-backend
+yarn add --cwd packages/backend @philips-software/backstage-plugin-upptime-backend
 ```
 
-Typically, this means creating a `src/plugins/upptime.ts` file and adding a
-reference to it to `src/index.ts` in the backend package.
-
-### upptime.ts
+You can then add the follwoing to your backend configuration in `backend/src/index.ts`:
 
 ```typescript
-import { createRouter } from '@internal/plugin-upptime-backend';
-import { Router } from 'express';
-import { PluginEnvironment } from '../types';
-import { CatalogClient } from '@backstage/catalog-client';
-
-export default async function createPlugin(
-  env: PluginEnvironment,
-): Promise<Router> {
-  const catalogClient = new CatalogClient({
-    discoveryApi: env.discovery,
-  });
-
-  return await createRouter({
-    logger: env.logger,
-    catalog: catalogClient,
-    config: env.config,
-    reader: env.reader,
-  });
-}
-```
-
-### src/index.ts
-
-```diff
-diff --git a/packages/backend/src/index.ts b/packages/backend/src/index.ts
-index 1942c36ad1..7fdc48ba24 100644
---- a/packages/backend/src/index.ts
-+++ b/packages/backend/src/index.ts
-@@ -50,6 +50,7 @@ import scaffolder from './plugins/scaffolder';
- import proxy from './plugins/proxy';
- import search from './plugins/search';
- import techdocs from './plugins/techdocs';
-+import upptime from './plugins/upptime';
- import techInsights from './plugins/techInsights';
- import todo from './plugins/todo';
- import graphql from './plugins/graphql';
-@@ -133,6 +134,7 @@ async function main() {
-     createEnv('tech-insights'),
-   );
-   const permissionEnv = useHotMemoize(module, () => createEnv('permission'));
-+  const upptimeEnv = useHotMemoize(module, () => createEnv('upptime'));
-
-   const apiRouter = Router();
-   apiRouter.use('/catalog', await catalog(catalogEnv));
-@@ -152,6 +154,7 @@ async function main() {
-   apiRouter.use('/badges', await badges(badgesEnv));
-   apiRouter.use('/jenkins', await jenkins(jenkinsEnv));
-   apiRouter.use('/permission', await permission(permissionEnv));
-+  apiRouter.use('/upptime', await upptime(upptimeEnv));
-   apiRouter.use(notFoundHandler());
-
-   const service = createServiceBuilder(module)
-
+backend.add(import('@philips-software/backstage-plugin-upptime-backend'));
 ```
 
 ### Configuration

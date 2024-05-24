@@ -9,6 +9,9 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 jobs:
   find-changed-workspaces:
     name: Detect workspace changes
@@ -16,15 +19,20 @@ jobs:
     outputs:
       workspaces: ${{ steps.find-changed-workspaces.outputs.workspaces }}
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@a4aa98b93cab29d9b1101a6143fb8bce00e2eac4 # v2.7.1
+        with:
+          egress-policy: audit
+
       - name: Checkout
-        uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f # v4
+        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4
 
       - name: Set up Node
         uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/ # Needed for auth
-      
+
       - name: Fetch previous commit for check
         run: git fetch origin '${{ github.event.pull_request.base.sha }}'
 
@@ -32,7 +40,7 @@ jobs:
         id: find-changed-workspaces
         run: node ./scripts/ci/list-workspaces-with-changes.js
         env:
-          COMMIT_SHA_BEFORE: '${{ github.event.pull_request.base.sha }}'
+          COMMIT_SHA_BEFORE: "${{ github.event.pull_request.base.sha }}"
 
   ci:
     name: Workspace ${{ matrix.workspace }}, CI step for node ${{ matrix.node-version }}
@@ -53,12 +61,17 @@ jobs:
       NODE_OPTIONS: --max-old-space-size=8192
 
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@a4aa98b93cab29d9b1101a6143fb8bce00e2eac4 # v2.7.1
+        with:
+          egress-policy: audit
+
       - name: Checkout main branch for tests purposes
-        uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f # v4
+        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4
         with:
           ref: main
       - name: Checkout
-        uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f # v4
+        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4
         with:
           ref: ${{ github.event.workflow_run.head_branch }}
 
@@ -118,8 +131,13 @@ jobs:
         workspace: ${{ fromJSON(needs.find-changed-workspaces.outputs.workspaces) }}
       fail-fast: false
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@a4aa98b93cab29d9b1101a6143fb8bce00e2eac4 # v2.7.1
+        with:
+          egress-policy: audit
+
       - name: Checkout head branch
-        uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f # v4
+        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4
         with:
           ref: ${{ github.event.workflow_run.head_branch }}
       - name: Setup node
@@ -145,3 +163,16 @@ jobs:
             || contains(needs.*.result, 'cancelled')
             || contains(needs.*.result, 'skipped')
           }}
+
+  dependency-review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@a4aa98b93cab29d9b1101a6143fb8bce00e2eac4 # v2.7.1
+        with:
+          egress-policy: audit
+
+      - name: "Checkout Repository"
+        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+      - name: "Dependency Review"
+        uses: actions/dependency-review-action@0c155c5e8556a497adf53f2c18edabf945ed8e70 # v4.3.2

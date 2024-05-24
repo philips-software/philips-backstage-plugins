@@ -1,0 +1,40 @@
+name: Automate Dependabot changeset
+on:
+  pull_request_target:
+    paths:
+      - ".github/workflows/automate_dependabot_changeset.yml"
+      - "**/yarn.lock"
+
+jobs:
+  generate-changeset:
+    runs-on: ubuntu-latest
+    if: github.actor == 'dependabot[bot]' && github.repository == 'philips-software/philips-backstage-plugins'
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@a4aa98b93cab29d9b1101a6143fb8bce00e2eac4 # v2.7.1
+        with:
+          egress-policy: audit
+
+      - uses: actions/create-github-app-token@v1
+        id: app-token
+        with:
+          app-id: ${{ secrets.BACKSTAGE_BOT_APPLICATION_ID }}
+          private-key: ${{ secrets.BACKSTAGE_BOT_PRIVATE_KEY }}
+
+      - name: Checkout
+        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+        with:
+          fetch-depth: 2
+          ref: ${{ github.head_ref }}
+          token: ${{ steps.app-token.outputs.token }}
+
+      - name: Configure Git
+        run: |
+          git config --global user.email noreply@philips.com
+          git config --global user.name 'Github changeset workflow'
+
+      - name: Generate feedback
+        uses: philips-software/backstage-actions/renovate-changesets@main
+        with:
+          multiple-workspaces: true
+          dependency-manager: dependabot
