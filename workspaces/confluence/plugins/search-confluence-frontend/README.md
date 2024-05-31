@@ -1,13 +1,18 @@
 # search-confluence-frontend
 
-Welcome to the search-confluence-frontend plugin!
+This plugin renders the Confluence Search Icon in the search bar.
 
-_This plugin was created through the Backstage CLI_
+It is designed to be integrated into an open-source plugin <https://github.com/K-Phoen/backstage-plugin-confluence>
 
-## Getting started
+To use this plugin import the `ConfluenceSearchIcon` from the package:
 
-Your plugin has been added to the example app in this repository, meaning you'll be able to access it by running `yarn start` in the root directory, and then navigating to [/search-confluence-frontend](http://localhost:3000/search-confluence-frontend).
+```javascript
+import { ConfluenceSearchIcon } from '@internal/plugin-search-confluence-frontend';
+```
 
-You can also serve the plugin in isolation by running `yarn start` in the plugin directory.
-This method of serving the plugin provides quicker iteration speed and a faster startup and hot reloads.
-It is only meant for local development, and the setup for it can be found inside the [/dev](./dev) directory.
+<img
+  src="docs/confluence.png"
+  alt="Confluence logo"
+  width="200"
+  height="200"
+/>;
