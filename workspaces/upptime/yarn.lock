@@ -5671,12 +5671,12 @@ __metadata:
     cross-fetch: ^4.0.0
     jest-fetch-mock: ^3.0.3
     react: ^16.13.1 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
+    react-dom: ^18.3.1
     react-router-dom: 6.0.0-beta.0 || ^6.3.0
     react-use: ^17.2.4
   peerDependencies:
     react: ^16.13.1 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
+    react-dom: ^18.3.1
     react-router-dom: 6.0.0-beta.0 || ^6.3.0
   languageName: unknown
   linkType: soft
@@ -19963,15 +19963,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^16.13.1 || ^17.0.0 || ^18.0.0":
-  version: 18.3.0
-  resolution: "react-dom@npm:18.3.0"
+"react-dom@npm:^18.3.1":
+  version: 18.3.1
+  resolution: "react-dom@npm:18.3.1"
   dependencies:
     loose-envify: ^1.1.0
-    scheduler: ^0.23.1
+    scheduler: ^0.23.2
   peerDependencies:
-    react: ^18.3.0
-  checksum: 04dc715fdedee89754c9c2cd627cf8bc5914dbb678d053ceecaf6feb11566fc653763781aefd82c240f264c87b1643ab1328ca6565b8b449ce79fbb2912fd1c7
+    react: ^18.3.1
+  checksum: 298954ecd8f78288dcaece05e88b570014d8f6dce5db6f66e6ee91448debeb59dcd31561dddb354eee47e6c1bb234669459060deb238ed0213497146e555a0b9
   languageName: node
   linkType: hard
 
@@ -21106,12 +21106,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"scheduler@npm:^0.23.1":
-  version: 0.23.1
-  resolution: "scheduler@npm:0.23.1"
+"scheduler@npm:^0.23.2":
+  version: 0.23.2
+  resolution: "scheduler@npm:0.23.2"
   dependencies:
     loose-envify: ^1.1.0
-  checksum: 8a5d140ee7e1f0927b64883544794043ebcaf57fe3f3541040535d1cb841640c389674838d3a25050227c20f8606cdeb1172c83e711523c689d428146ed8efcb
+  checksum: 3e82d1f419e240ef6219d794ff29c7ee415fbdc19e038f680a10c067108e06284f1847450a210b29bbaf97b9d8a97ced5f624c31c681248ac84c80d56ad5a2c4
   languageName: node
   linkType: hard
 
