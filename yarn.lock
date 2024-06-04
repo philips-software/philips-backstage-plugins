@@ -1627,12 +1627,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@backstage-community/cli@portal:./workspaces/repo-tools/packages/cli::locator=%40philips-software%2Fphilips-backstage-plugins%40workspace%3A."
   dependencies:
-    "@backstage/cli": ^0.26.2
+    "@backstage/cli": ^0.26.6
     "@backstage/errors": ^1.2.4
     "@manypkg/get-packages": ^2.2.1
-    chalk: ^4.1.2
+    chalk: ^5.3.0
     commander: ^12.0.0
-    find-up: ^5.0.0
+    find-up: ^7.0.0
     fs-extra: ^11.2.0
     inquirer: ^9.2.20
     replace-in-file: ^7.1.0
@@ -1642,15 +1642,15 @@ __metadata:
   languageName: node
   linkType: soft
 
-"@backstage/catalog-model@npm:^1.4.5":
-  version: 1.4.5
-  resolution: "@backstage/catalog-model@npm:1.4.5"
+"@backstage/catalog-model@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "@backstage/catalog-model@npm:1.5.0"
   dependencies:
     "@backstage/errors": ^1.2.4
     "@backstage/types": ^1.1.1
     ajv: ^8.10.0
     lodash: ^4.17.21
-  checksum: 34aaa4b82d29bf3b0a4b52552f8eb8189041df826f87a7bbdef5107a1efb8ce1f7eb1c1a343868718ca2af9be76d9f5184f6a92076d893d3a3951d16881647b7
+  checksum: 545873625afbb25a2142af9f8c701547b448fe8b822c9ed699c86a9c385571014115a2c3105a3dca2bc2ac63b837b093dba39a973c2f9e23521d427a0328ba12
   languageName: node
   linkType: hard
 
@@ -1677,18 +1677,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/cli@npm:^0.26.2":
-  version: 0.26.4
-  resolution: "@backstage/cli@npm:0.26.4"
+"@backstage/cli@npm:^0.26.6":
+  version: 0.26.6
+  resolution: "@backstage/cli@npm:0.26.6"
   dependencies:
-    "@backstage/catalog-model": ^1.4.5
+    "@backstage/catalog-model": ^1.5.0
     "@backstage/cli-common": ^0.1.13
     "@backstage/cli-node": ^0.2.5
     "@backstage/config": ^1.2.0
     "@backstage/config-loader": ^1.8.0
     "@backstage/errors": ^1.2.4
-    "@backstage/eslint-plugin": ^0.1.7
-    "@backstage/integration": ^1.10.0
+    "@backstage/eslint-plugin": ^0.1.8
+    "@backstage/integration": ^1.11.0
     "@backstage/release-manifests": ^0.0.11
     "@backstage/types": ^1.1.1
     "@manypkg/get-packages": ^1.1.3
@@ -1808,7 +1808,7 @@ __metadata:
       optional: true
   bin:
     backstage-cli: bin/backstage-cli
-  checksum: 0ae97290d34a201a06631f49ecd7003d074d2749d87441a2122c5446f18b17f2d528ac68622fc21cbb157ed2816a14253824a85c65a28ecde96bc61d152f9d34
+  checksum: 8006e935cc1b6b11a7da8b0b963bc90ab565ada8920cc7b20940eeca8ca1e7aa083aad38aa7a37296552b90bdfb73a58e0fc925f08c6eae9e2df384208b2c37a
   languageName: node
   linkType: hard
 
@@ -1856,19 +1856,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/eslint-plugin@npm:^0.1.7":
-  version: 0.1.7
-  resolution: "@backstage/eslint-plugin@npm:0.1.7"
+"@backstage/eslint-plugin@npm:^0.1.8":
+  version: 0.1.8
+  resolution: "@backstage/eslint-plugin@npm:0.1.8"
   dependencies:
     "@manypkg/get-packages": ^1.1.3
     minimatch: ^9.0.0
-  checksum: 84d8b75503484477f4f4cf456dd59794dee0e98a1d46bf1cd1f2eb284c4acb5346d7080392cff35a5115774fb44e8b30cd1a97f73c161dc468cd2825b4260d23
+  checksum: 1b6bfd77894e41dcb4e7570e38854258bc3fc6726d8567eba7c740fe91e8552eb73c4a703882eabb6e4ed8792c0d940be1bc8b38381a96aacb43675b43f4bb8e
   languageName: node
   linkType: hard
 
-"@backstage/integration@npm:^1.10.0":
-  version: 1.10.0
-  resolution: "@backstage/integration@npm:1.10.0"
+"@backstage/integration@npm:^1.11.0":
+  version: 1.11.0
+  resolution: "@backstage/integration@npm:1.11.0"
   dependencies:
     "@azure/identity": ^4.0.0
     "@backstage/config": ^1.2.0
@@ -1879,7 +1879,7 @@ __metadata:
     git-url-parse: ^14.0.0
     lodash: ^4.17.21
     luxon: ^3.0.0
-  checksum: 86324df95b30ff6ae92fcc605bd21d0f12cdc0553d555ebe8977a1be6554819ad8723eabcd99d1574c7c244b4822a6628d01273557040c89360394ba3198f6b9
+  checksum: 57ea46e57da004cdab41e82f558105f78f84f65d58163e93363dc775d42ab29401d3a38390ace012bf388eec57350d432a415d8fed27e57419e21522044fcc33
   languageName: node
   linkType: hard
 
@@ -7665,6 +7665,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"find-up@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "find-up@npm:7.0.0"
+  dependencies:
+    locate-path: ^7.2.0
+    path-exists: ^5.0.0
+    unicorn-magic: ^0.1.0
+  checksum: e1c63860f9c04355ab2aa19f4be51c1a6e14a7d8cfbd8090e2be6da2a36a76995907cb45337a4b582b19b164388f71d6ab118869dc7bffb2093f2c089ecb95ee
+  languageName: node
+  linkType: hard
+
 "flat-cache@npm:^3.0.4":
   version: 3.2.0
   resolution: "flat-cache@npm:3.2.0"
@@ -10269,6 +10280,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"locate-path@npm:^7.2.0":
+  version: 7.2.0
+  resolution: "locate-path@npm:7.2.0"
+  dependencies:
+    p-locate: ^6.0.0
+  checksum: c1b653bdf29beaecb3d307dfb7c44d98a2a98a02ebe353c9ad055d1ac45d6ed4e1142563d222df9b9efebc2bcb7d4c792b507fad9e7150a04c29530b7db570f8
+  languageName: node
+  linkType: hard
+
 "lodash.camelcase@npm:^4.3.0":
   version: 4.3.0
   resolution: "lodash.camelcase@npm:4.3.0"
@@ -11286,6 +11306,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"p-limit@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "p-limit@npm:4.0.0"
+  dependencies:
+    yocto-queue: ^1.0.0
+  checksum: 01d9d70695187788f984226e16c903475ec6a947ee7b21948d6f597bed788e3112cc7ec2e171c1d37125057a5f45f3da21d8653e04a3a793589e12e9e80e756b
+  languageName: node
+  linkType: hard
+
 "p-locate@npm:^3.0.0":
   version: 3.0.0
   resolution: "p-locate@npm:3.0.0"
@@ -11310,6 +11339,15 @@ __metadata:
   dependencies:
     p-limit: ^3.0.2
   checksum: 1623088f36cf1cbca58e9b61c4e62bf0c60a07af5ae1ca99a720837356b5b6c5ba3eb1b2127e47a06865fee59dd0453cad7cc844cda9d5a62ac1a5a51b7c86d3
+  languageName: node
+  linkType: hard
+
+"p-locate@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "p-locate@npm:6.0.0"
+  dependencies:
+    p-limit: ^4.0.0
+  checksum: 2bfe5234efa5e7a4e74b30a5479a193fdd9236f8f6b4d2f3f69e3d286d9a7d7ab0c118a2a50142efcf4e41625def635bd9332d6cbf9cc65d85eb0718c579ab38
   languageName: node
   linkType: hard
 
@@ -11480,6 +11518,13 @@ __metadata:
   version: 4.0.0
   resolution: "path-exists@npm:4.0.0"
   checksum: 505807199dfb7c50737b057dd8d351b82c033029ab94cb10a657609e00c1bc53b951cfdbccab8de04c5584d5eff31128ce6afd3db79281874a5ef2adbba55ed1
+  languageName: node
+  linkType: hard
+
+"path-exists@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "path-exists@npm:5.0.0"
+  checksum: 8ca842868cab09423994596eb2c5ec2a971c17d1a3cb36dbf060592c730c725cd524b9067d7d2a1e031fef9ba7bd2ac6dc5ec9fb92aa693265f7be3987045254
   languageName: node
   linkType: hard
 
@@ -14201,6 +14246,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"unicorn-magic@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "unicorn-magic@npm:0.1.0"
+  checksum: 48c5882ca3378f380318c0b4eb1d73b7e3c5b728859b060276e0a490051d4180966beeb48962d850fd0c6816543bcdfc28629dcd030bb62a286a2ae2acb5acb6
+  languageName: node
+  linkType: hard
+
 "unique-filename@npm:^3.0.0":
   version: 3.0.0
   resolution: "unique-filename@npm:3.0.0"
@@ -14959,6 +15011,13 @@ __metadata:
   version: 0.1.0
   resolution: "yocto-queue@npm:0.1.0"
   checksum: f77b3d8d00310def622123df93d4ee654fc6a0096182af8bd60679ddcdfb3474c56c6c7190817c84a2785648cdee9d721c0154eb45698c62176c322fb46fc700
+  languageName: node
+  linkType: hard
+
+"yocto-queue@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "yocto-queue@npm:1.0.0"
+  checksum: 2cac84540f65c64ccc1683c267edce396b26b1e931aa429660aefac8fbe0188167b7aee815a3c22fa59a28a58d898d1a2b1825048f834d8d629f4c2a5d443801
   languageName: node
   linkType: hard
 
