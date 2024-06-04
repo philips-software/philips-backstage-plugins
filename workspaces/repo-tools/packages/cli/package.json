@@ -41,7 +41,7 @@
     "fs-extra": "^11.2.0",
     "inquirer": "^9.2.20",
     "replace-in-file": "^7.1.0",
-    "semver": "^7.6.0"
+    "semver": "^7.6.2"
   },
   "nodemonConfig": {
     "watch": "./src",
