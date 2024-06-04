@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 import fs from 'fs-extra';
 import { OptionValues } from 'commander';
-import { findUp, pathExists } from 'find-up';
+import findUp from 'find-up';
 import path, { basename } from 'path';
 import { getPackages, Package } from '@manypkg/get-packages';
 import { createWorkspace } from '../../lib/workspaces/createWorkspace';
@@ -22,7 +22,7 @@ const getPaths = async (options: {
   const communityPluginsPackageJson = await findUp(
     async dir => {
       const packageJsonPath = path.join(dir, 'package.json');
-      const hasPackageJson = await pathExists(packageJsonPath);
+      const hasPackageJson = await findUp.exists(packageJsonPath);
       if (hasPackageJson) {
         const packageJsonContents = require(packageJsonPath);
         if (packageJsonContents.name === '@backstage-community/plugins') {
