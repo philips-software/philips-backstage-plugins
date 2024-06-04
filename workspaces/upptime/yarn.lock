@@ -3520,7 +3520,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/theme@npm:^0.5.2, @backstage/theme@npm:^0.5.3":
+"@backstage/theme@npm:^0.5.3":
   version: 0.5.3
   resolution: "@backstage/theme@npm:0.5.3"
   dependencies:
@@ -3533,6 +3533,22 @@ __metadata:
     react: ^16.13.1 || ^17.0.0 || ^18.0.0
     react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
   checksum: ac6c3bbd73294385f73aa91e04f8bf3a1bb78cadc0e43034760ebf19e86814ed2d679f2641bb086aa9e305a24d923d8c3480b2de3bff55189c19bc5dfdce1814
+  languageName: node
+  linkType: hard
+
+"@backstage/theme@npm:^0.5.5":
+  version: 0.5.5
+  resolution: "@backstage/theme@npm:0.5.5"
+  dependencies:
+    "@emotion/react": ^11.10.5
+    "@emotion/styled": ^11.10.5
+    "@mui/material": ^5.12.2
+  peerDependencies:
+    "@material-ui/core": ^4.12.2
+    "@types/react": ^16.13.1 || ^17.0.0 || ^18.0.0
+    react: ^16.13.1 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
+  checksum: a5ba7b39d41773a4a73a07d1a9a6bcf0815835a196a31c1ec1d5eac61ec801bfe875f31823a6ae6aa5033b21bd04b4fa692fd3fddc71a12e2126b1d222738b34
   languageName: node
   linkType: hard
 
@@ -5661,7 +5677,7 @@ __metadata:
     "@backstage/dev-utils": ^1.0.30
     "@backstage/plugin-catalog-react": ^1.11.2
     "@backstage/test-utils": ^1.5.3
-    "@backstage/theme": ^0.5.2
+    "@backstage/theme": ^0.5.5
     "@material-ui/core": ^4.9.13
     "@material-ui/icons": ^4.9.1
     "@material-ui/lab": ^4.0.0-alpha.61
