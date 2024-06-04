@@ -40,7 +40,7 @@
     "find-up": "^5.0.0",
     "fs-extra": "^11.2.0",
     "inquirer": "^9.2.20",
-    "replace-in-file": "^7.1.0",
+    "replace-in-file": "^7.2.0",
     "semver": "^7.6.0"
   },
   "nodemonConfig": {
