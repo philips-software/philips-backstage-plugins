@@ -10,6 +10,11 @@
     "main": "dist/index.esm.js",
     "types": "dist/index.d.ts"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/philips-software/philips-backstage-plugins",
+    "directory": "workspaces/confluence/plugins/search-confluence-frontend"
+  },
   "backstage": {
     "role": "frontend-plugin"
   },
