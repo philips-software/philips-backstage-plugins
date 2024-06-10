@@ -10,11 +10,12 @@ Search Results:
 ## Installation
 
 Add the plugin to your frontend app:
+
 ```
 @philips-software/backstage-plugin-search-confluence-frontend
 ```
 
-Add The Confluence Search Component to : ```packages/app/src/components/search/SearchPage.tsx ```
+Add The Confluence Search Component to : `packages/app/src/components/search/SearchPage.tsx `
 
 ```typescript
 // packages/app/src/components/search/SearchPage.tsx
@@ -42,13 +43,3 @@ import {
   <ConfluenceResultListItem />
 </SearchResult>
 ```
-
-
-
-
-
-
-
-
-
-

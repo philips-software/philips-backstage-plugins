@@ -25,7 +25,7 @@ export const confluencePlugin = createBackendModule({
         config: coreServices.rootConfig,
         logger: coreServices.logger,
         scheduler: coreServices.scheduler,
-        
+
         indexRegistry: searchIndexRegistryExtensionPoint,
       },
       async init({ config, logger, scheduler, indexRegistry }) {
