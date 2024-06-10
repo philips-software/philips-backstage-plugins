@@ -1,18 +1,54 @@
-# search-confluence-frontend
+# Backstage Confluence Search Collator Plugin
 
-This plugin renders the Confluence Search Icon in the search bar.
+This plugin integrates Confluence documents into Backstage's search engine, enabling users to search for and retrieve Confluence content directly from Backstage App
 
-It is designed to be integrated into an open-source plugin <https://github.com/K-Phoen/backstage-plugin-confluence>
+Note: it is used in combination with its [backend counter-part](../search-confluence-backend/README.md).
 
-To use this plugin import the `ConfluenceSearchIcon` from the package:
+Search Results:
+![Search results](./docs/confluence.png)
 
-```javascript
-import { ConfluenceSearchIcon } from '@internal/plugin-search-confluence-frontend';
+## Installation
+
+Add the plugin to your frontend app:
+```
+@philips-software/backstage-plugin-search-confluence-frontend
 ```
 
-<img
-  src="docs/confluence.png"
-  alt="Confluence logo"
-  width="200"
-  height="200"
-/>;
+Add The Confluence Search Component to : ```packages/app/src/components/search/SearchPage.tsx ```
+
+```typescript
+// packages/app/src/components/search/SearchPage.tsx
+
+import {
+  ConfluenceSearchIcon,
+  ConfluenceResultListItem,
+} from '@philips-software/backstage-plugin-search-confluence-frontend';;
+
+// ...
+<SearchType.Accordion
+  name="Result Type"
+  types={[
+    // ...
+    {
+      value: 'confluence',
+      name: 'Confluence',
+      icon: <ConfluenceSearchIcon />,
+    },
+  ]}
+/>
+
+<SearchResult>
+  // ...
+  <ConfluenceResultListItem />
+</SearchResult>
+```
+
+
+
+
+
+
+
+
+
+
