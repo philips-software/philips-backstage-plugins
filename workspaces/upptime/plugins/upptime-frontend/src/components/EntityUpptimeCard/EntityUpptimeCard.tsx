@@ -74,6 +74,9 @@ export const EntityUpptimeCard = (props: EntityUpptimeCardProps) => {
 
   const { value: imageUrl } = useAsync(async () => {
     if (key) {
+      // we need to make sure we have a cookie before we request the image location
+      // the cookie is used to retrieve the image from the API instead of a bearer token
+      await upptimeApi.getCookie();
       return upptimeApi.getSummaryImageUrl(getCompoundEntityRef(entity));
     }
     return undefined;

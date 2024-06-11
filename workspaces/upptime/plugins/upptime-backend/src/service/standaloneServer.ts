@@ -5,7 +5,7 @@ import { Logger } from 'winston';
 import { createRouter } from './router';
 import { ConfigReader } from '@backstage/config';
 import { CatalogApi } from '@backstage/catalog-client';
-import { AuthService } from '@backstage/backend-plugin-api';
+import { AuthService, HttpAuthService } from '@backstage/backend-plugin-api';
 
 export interface ServerOptions {
   port: number;
@@ -50,7 +50,9 @@ export async function startStandaloneServer(
     getPluginRequestToken: jest.fn().mockResolvedValue({ token: 'mytoken' }),
     getOwnServiceCredentials: jest.fn(),
   } as unknown as AuthService;
-
+  const httpAuth = {
+    issueUserCookie: jest.fn(),
+  } as unknown as HttpAuthService;
   logger.debug('Starting application server...');
   const router = await createRouter({
     logger,
@@ -58,6 +60,7 @@ export async function startStandaloneServer(
     config,
     reader: mockUrlReader,
     auth,
+    httpAuth,
   });
 
   let service = createServiceBuilder(module)
