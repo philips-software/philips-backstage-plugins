@@ -1,5 +1,11 @@
 # @philips-software/backstage-plugin-upptime-backend
 
+## 1.2.0
+
+### Minor Changes
+
+- b580c6e: Updated to backstage 1.27.6
+
 ## 1.1.0
 
 ### Minor Changes
