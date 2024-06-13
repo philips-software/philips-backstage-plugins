@@ -43,7 +43,7 @@ Add the collator to your backend instance, along with the search plugin itself
 // packages/backend/src/index.ts
 import { createBackend } from '@backstage/backend-defaults';
 import { searchPlugin } from '@backstage/plugin-search-backend/alpha';
-import searchConfluenceCollatorModule from '@internal/plugin-search-confluence-backend'; // confluence backend collator
+import searchConfluenceCollatorModule from '@philips-software/backstage-plugin-search-confluence-backend'; // confluence backend collator
 
 const backend = createBackend();
 backend.add(searchPlugin());
