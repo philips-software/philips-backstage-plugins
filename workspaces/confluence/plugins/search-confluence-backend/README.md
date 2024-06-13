@@ -13,32 +13,32 @@ yarn add @philips-software/backstage-plugin-search-confluence-backend
 ```
 
 # Configuration
+
 Update `app-config.yml`
 
 ```yaml
 confluence:
   schedule:
-    frequency: 
-# example: frequency: { minutes: 15 }
-    timeout: 
-# example: timeout: { minutes: 15 }
-    initialDelay: 
-# example initialDelay: { seconds: 3 }
+    frequency:
+    # example: frequency: { minutes: 15 }
+    timeout:
+    # example: timeout: { minutes: 15 }
+    initialDelay:
+  # example initialDelay: { seconds: 3 }
   wikiUrl: https://org-name.atlassian.net/wiki
   auth:
     token: ${Your PAT Token}
   category:
 #   provide the list of spaces you want to indexed
 # example
-    # - space1
-    # - space2
-
-
+# - space1
+# - space2
 ```
 
 ## Backend Configuration (Follows new backend)
 
 Add the collator to your backend instance, along with the search plugin itself
+
 ```typescript
 // packages/backend/src/index.ts
 import { createBackend } from '@backstage/backend-defaults';
