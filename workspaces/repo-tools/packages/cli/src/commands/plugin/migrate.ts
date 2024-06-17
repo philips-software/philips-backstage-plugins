@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 import fs from 'fs-extra';
 import { OptionValues } from 'commander';
-import { findUp, pathExists } from 'find-up';
+import findUp from 'find-up';
 import path, { basename } from 'path';
 import { getPackages, Package } from '@manypkg/get-packages';
 import { createWorkspace } from '../../lib/workspaces/createWorkspace';
@@ -22,7 +22,7 @@ const getPaths = async (options: {
   const communityPluginsPackageJson = await findUp(
     async dir => {
       const packageJsonPath = path.join(dir, 'package.json');
-      const hasPackageJson = await pathExists(packageJsonPath);
+      const hasPackageJson = await findUp.exists(packageJsonPath);
       if (hasPackageJson) {
         const packageJsonContents = require(packageJsonPath);
         if (packageJsonContents.name === '@backstage-community/plugins') {
@@ -386,7 +386,6 @@ export default async (opts: OptionValues) => {
       await fs.mkdirp(path.join(workspacePath, '.yarn', 'patches'));
       await fs.copyFile(
         path.join(
-          // eslint-disable-next-line no-restricted-syntax
           __dirname,
           '..',
           '..',
@@ -421,11 +420,11 @@ export default async (opts: OptionValues) => {
     }
 
     // Fix for some packages without react/react-dom deps
-    if (movedPackageJson.peerDependencies?.react) {
-      movedPackageJson.devDependencies.react =
-        movedPackageJson.peerDependencies.react;
+    if (movedPackageJson.peerDependencies?.['react']) {
+      movedPackageJson.devDependencies['react'] =
+        movedPackageJson.peerDependencies['react'];
       movedPackageJson.devDependencies['react-dom'] =
-        movedPackageJson.peerDependencies.react;
+        movedPackageJson.peerDependencies['react'];
     }
 
     // Fix for graphqiql package
