@@ -4,9 +4,9 @@
 # The last matching pattern takes precedence.
 # https://help.github.com/articles/about-codeowners/
 
-*                                                   @philips-software/philips-backstage-plugins-maintainers
-yarn.lock                                           @philips-software/philips-backstage-plugins-maintainers
-*/yarn.lock                                         @philips-software/philips-backstage-plugins-maintainers
+*                                                   @philips-software/backstage-plugin-maintainers
+yarn.lock                                           @philips-software/backstage-plugin-maintainers
+*/yarn.lock                                         @philips-software/backstage-plugin-maintainers
 
-/workspaces/upptime                                 @philips-software/philips-backstage-plugins-maintainers @scottguymer
-/workspaces/confluence                              @philips-software/philips-backstage-plugins-maintainers @Prateek-Wayne
+/workspaces/upptime                                 @philips-software/backstage-plugin-maintainers @scottguymer
+/workspaces/confluence                              @philips-software/backstage-plugin-maintainers @Prateek-Wayne
