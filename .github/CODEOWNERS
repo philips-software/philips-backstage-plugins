@@ -9,3 +9,4 @@ yarn.lock                                           @philips-software/philips-ba
 */yarn.lock                                         @philips-software/philips-backstage-plugins-maintainers
 
 /workspaces/upptime                                 @philips-software/philips-backstage-plugins-maintainers @scottguymer
+/workspaces/confluence                              @philips-software/philips-backstage-plugins-maintainers @Prateek-Wayne
