@@ -2979,7 +2979,7 @@ __metadata:
     find-up: ^5.0.0
     fs-extra: ^11.2.0
     inquirer: ^8.0.0
-    replace-in-file: ^7.1.0
+    replace-in-file: ^8.0.0
     semver: ^7.6.0
   bin:
     community-cli: bin/community-cli
@@ -9843,6 +9843,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"chalk@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "chalk@npm:5.3.0"
+  checksum: 623922e077b7d1e9dedaea6f8b9e9352921f8ae3afe739132e0e00c275971bdd331268183b2628cf4ab1727c45ea1f28d7e24ac23ce1db1eb653c414ca8a5a80
+  languageName: node
+  linkType: hard
+
 "char-regex@npm:^1.0.2":
   version: 1.0.2
   resolution: "char-regex@npm:1.0.2"
@@ -13255,6 +13262,22 @@ __metadata:
   bin:
     glob: dist/esm/bin.mjs
   checksum: 5d33c686c80bf6877f4284adf99a8c3cbb2a6eccbc92342943fe5d4b42c01d78c1881f2223d950c92a938d0f857e12e37b86a8e5483ab2141822e053b67d0dde
+  languageName: node
+  linkType: hard
+
+"glob@npm:^10.4.2":
+  version: 10.4.2
+  resolution: "glob@npm:10.4.2"
+  dependencies:
+    foreground-child: ^3.1.0
+    jackspeak: ^3.1.2
+    minimatch: ^9.0.4
+    minipass: ^7.1.2
+    package-json-from-dist: ^1.0.0
+    path-scurry: ^1.11.1
+  bin:
+    glob: dist/esm/bin.mjs
+  checksum: bd7c0e30701136e936f414e5f6f82c7f04503f01df77408f177aa584927412f0bde0338e6ec541618cd21eacc57dde33e7b3c6c0a779cc1c6e6a0e14f3d15d9b
   languageName: node
   linkType: hard
 
@@ -17335,6 +17358,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"package-json-from-dist@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "package-json-from-dist@npm:1.0.0"
+  checksum: ac706ec856a5a03f5261e4e48fa974f24feb044d51f84f8332e2af0af04fbdbdd5bbbfb9cbbe354190409bc8307c83a9e38c6672c3c8855f709afb0006a009ea
+  languageName: node
+  linkType: hard
+
 "pako@npm:^1.0.10, pako@npm:~1.0.5":
   version: 1.0.11
   resolution: "pako@npm:1.0.11"
@@ -18823,6 +18853,19 @@ __metadata:
   bin:
     replace-in-file: bin/cli.js
   checksum: 2ed61bd0cf0752b18775b52342ad36f4ee6c806f7eca0b0d085c23bafe0cb4828e4ec8f59058bde6b67d2ed5ac51e1681284f586089b58b966e2489712830db0
+  languageName: node
+  linkType: hard
+
+"replace-in-file@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "replace-in-file@npm:8.0.0"
+  dependencies:
+    chalk: ^5.3.0
+    glob: ^10.4.2
+    yargs: ^17.7.2
+  bin:
+    replace-in-file: bin/cli.js
+  checksum: 720233c4933999e4be15505ea276b8103e0cefdd58a45c47cad66f77333757077d4be0c82301eaf853ad9d93aee78e9bd21758b905e6e64a17cc941cdb8ae5db
   languageName: node
   linkType: hard
 
