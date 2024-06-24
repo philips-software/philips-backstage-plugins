@@ -1,13 +1,45 @@
-# search-confluence-frontend
+# Backstage Confluence Search Collator Plugin
 
-Welcome to the search-confluence-frontend plugin!
+This plugin integrates Confluence documents into Backstage's search engine, enabling users to search for and retrieve Confluence content directly from Backstage App
 
-_This plugin was created through the Backstage CLI_
+Note: it is used in combination with its [backend counter-part](../search-confluence-backend/README.md).
 
-## Getting started
+Search Results:
+![Search results](./docs/confluence.png)
 
-Your plugin has been added to the example app in this repository, meaning you'll be able to access it by running `yarn start` in the root directory, and then navigating to [/search-confluence-frontend](http://localhost:3000/search-confluence-frontend).
+## Installation
 
-You can also serve the plugin in isolation by running `yarn start` in the plugin directory.
-This method of serving the plugin provides quicker iteration speed and a faster startup and hot reloads.
-It is only meant for local development, and the setup for it can be found inside the [/dev](./dev) directory.
+Add the plugin to your frontend app:
+
+```
+@philips-software/backstage-plugin-search-confluence-frontend
+```
+
+Add The Confluence Search Component to : `packages/app/src/components/search/SearchPage.tsx `
+
+```typescript
+// packages/app/src/components/search/SearchPage.tsx
+
+import {
+  ConfluenceSearchIcon,
+  ConfluenceResultListItem,
+} from '@philips-software/backstage-plugin-search-confluence-frontend';;
+
+// ...
+<SearchType.Accordion
+  name="Result Type"
+  types={[
+    // ...
+    {
+      value: 'confluence',
+      name: 'Confluence',
+      icon: <ConfluenceSearchIcon />,
+    },
+  ]}
+/>
+
+<SearchResult>
+  // ...
+  <ConfluenceResultListItem />
+</SearchResult>
+```
