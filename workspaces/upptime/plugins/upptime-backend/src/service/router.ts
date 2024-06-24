@@ -7,7 +7,11 @@ import { NotFoundError } from '@backstage/errors';
 import { UpptimeAPI } from '../api/UpptimeAPI';
 import { Entity } from '@backstage/catalog-model';
 import * as path from 'path';
-import { AuthService, LoggerService } from '@backstage/backend-plugin-api';
+import {
+  AuthService,
+  HttpAuthService,
+  LoggerService,
+} from '@backstage/backend-plugin-api';
 import { UPPTIME_ANNOTATION } from '../constants';
 
 export interface RouterOptions {
@@ -16,6 +20,7 @@ export interface RouterOptions {
   config: Config;
   reader: UrlReader;
   auth: AuthService;
+  httpAuth: HttpAuthService;
 }
 
 const getUpptimeAnnotation = (entity: Entity): string | undefined =>
@@ -30,12 +35,19 @@ const getUrlFromBase = (baseUrl: string, pathSegments: string[]) => {
 export async function createRouter(
   options: RouterOptions,
 ): Promise<express.Router> {
-  const { logger, catalog, reader, config, auth } = options;
+  const { logger, catalog, reader, config, auth, httpAuth } = options;
 
   const upptimeAPi = UpptimeAPI.fromConfig(config, logger);
 
   const router = Router();
   router.use(express.json());
+
+  // Endpoint that sets the cookie for the user so they can load the graphs as image directly
+  router.get('/cookie', async (_, res) => {
+    const { expiresAt } = await httpAuth.issueUserCookie(res);
+
+    res.json({ expiresAt: expiresAt.toISOString() });
+  });
 
   router.get('/summary/:kind/:namespace/:name', async (req, res) => {
     const { kind, namespace, name } = req.params;

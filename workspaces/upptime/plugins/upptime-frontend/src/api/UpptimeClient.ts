@@ -40,6 +40,19 @@ export class UpptimeClient implements UpptimeApi {
     return undefined;
   }
 
+  async getCookie(): Promise<void> {
+    const { token: idToken } = await this.identityApi.getCredentials();
+
+    const apiUrl = `${await this.discoveryApi.getBaseUrl('upptime')}`;
+
+    await fetch(`${apiUrl}/cookie`, {
+      headers: {
+        'Content-Type': 'application/json',
+        ...(idToken && { Authorization: `Bearer ${idToken}` }),
+      },
+    });
+  }
+
   async getSummaryImageUrl(entity: CompoundEntityRef): Promise<string> {
     const apiUrl = `${await this.discoveryApi.getBaseUrl('upptime')}`;
 

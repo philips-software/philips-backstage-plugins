@@ -16,4 +16,6 @@ export type UpptimeApi = {
   getSummary(entity: CompoundEntityRef): Promise<UpptimeSummary | undefined>;
 
   getSummaryImageUrl(entity: CompoundEntityRef): Promise<string>;
+
+  getCookie(): Promise<void>;
 };

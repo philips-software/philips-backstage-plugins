@@ -10,7 +10,7 @@ import { Entity } from '@backstage/catalog-model';
 import { createRouter } from './router';
 import { ConfigReader } from '@backstage/config';
 import { CatalogApi } from '@backstage/catalog-client';
-import { AuthService } from '@backstage/backend-plugin-api';
+import { AuthService, HttpAuthService } from '@backstage/backend-plugin-api';
 
 describe('createRouter', () => {
   let app: express.Express;
@@ -29,6 +29,9 @@ describe('createRouter', () => {
   const auth = {
     getPluginRequestToken: jest.fn(),
     getOwnServiceCredentials: jest.fn(),
+  };
+  const httpAuth = {
+    issueUserCookie: jest.fn(),
   };
   const config = new ConfigReader({
     upptime: {
@@ -51,6 +54,7 @@ describe('createRouter', () => {
       config,
       reader: mockUrlReader,
       auth: auth as unknown as AuthService,
+      httpAuth: httpAuth as unknown as HttpAuthService,
     });
     app = express().use(router);
   });
