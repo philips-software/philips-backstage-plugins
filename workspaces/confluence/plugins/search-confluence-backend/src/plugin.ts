@@ -17,8 +17,8 @@ import { loggerToWinstonLogger } from '@backstage/backend-common';
  * @public
  */
 export const confluencePlugin = createBackendModule({
-  moduleId: 'confluence',
-  pluginId: 'confluence-search-backend',
+  pluginId: 'search',
+  moduleId: 'confluence-collator',
   register(env) {
     env.registerInit({
       deps: {
@@ -28,6 +28,7 @@ export const confluencePlugin = createBackendModule({
         indexRegistry: searchIndexRegistryExtensionPoint,
       },
       async init({ config, logger, scheduler, indexRegistry }) {
+        // The schedule is determined by the configuration if available.
         // If not, the Confluence plugin's default schedule is used.
         const schedule = config.has('confluence.schedule')
           ? readTaskScheduleDefinitionFromConfig(

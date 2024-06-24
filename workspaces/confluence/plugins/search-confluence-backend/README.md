@@ -1,14 +1,52 @@
-# search-confluence-backend
+# Confluence Search Backend Module Plugin
 
-Welcome to the search-confluence-backend backend plugin!
+A plugin that provides Confluence-specific functionality that can be used for search in your Backstage App.
 
-_This plugin was created through the Backstage CLI_
+[It is used in combination with its frontend counterpart](../search-confluence-frontend)
 
-## Getting started
+## Installation
 
-Your plugin has been added to the example app in this repository, meaning you'll be able to access it by running `yarn
-start` in the root directory, and then navigating to [/searchConfluenceBackendPlugin/health](http://localhost:7007/api/searchConfluenceBackendPlugin/health).
+Add the plugin to your backend app:
 
-You can also serve the plugin in isolation by running `yarn start` in the plugin directory.
-This method of serving the plugin provides quicker iteration speed and a faster startup and hot reloads.
-It is only meant for local development, and the setup for it can be found inside the [/dev](/dev) directory.
+```sh
+yarn add @philips-software/backstage-plugin-search-confluence-backend
+```
+
+# Configuration
+
+Update `app-config.yml`
+
+```yaml
+confluence:
+  schedule:
+    frequency:
+    # example: frequency: { minutes: 15 }
+    timeout:
+    # example: timeout: { minutes: 15 }
+    initialDelay:
+  # example initialDelay: { seconds: 3 }
+  wikiUrl: https://org-name.atlassian.net/wiki
+  auth:
+    token: ${Your PAT Token}
+  category:
+# provide the list of categories you want to use to find spaces that will be indexed
+# example
+# - space1
+# - space2
+```
+
+## Backend Configuration (Follows new backend)
+
+Add the collator to your backend instance, along with the search plugin itself
+
+```typescript
+// packages/backend/src/index.ts
+import { createBackend } from '@backstage/backend-defaults';
+import { searchPlugin } from '@backstage/plugin-search-backend/alpha';
+import searchConfluenceCollatorModule from '@philips-software/backstage-plugin-search-confluence-backend'; // confluence backend collator
+
+const backend = createBackend();
+backend.add(searchPlugin());
+backend.add(searchConfluenceCollatorModule());
+backend.start();
+```
