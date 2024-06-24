@@ -1,5 +1,11 @@
 # @philips-software/backstage-plugin-upptime-backend
 
+## 1.3.0
+
+### Minor Changes
+
+- bc5bba2: Update to use cookie auth for graph images
+
 ## 1.2.0
 
 ### Minor Changes
