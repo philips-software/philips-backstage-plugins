@@ -29,7 +29,7 @@ confluence:
   auth:
     token: ${Your PAT Token}
   category:
-#   provide the list of spaces you want to indexed
+# provide the list of categories you want to use to find spaces that will be indexed
 # example
 # - space1
 # - space2

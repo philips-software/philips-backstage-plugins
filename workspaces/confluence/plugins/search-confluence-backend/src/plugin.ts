@@ -24,7 +24,6 @@ export const confluencePlugin = createBackendModule({
       deps: {
         config: coreServices.rootConfig,
         logger: coreServices.logger,
-        discovery: coreServices.discovery,
         scheduler: coreServices.scheduler,
         indexRegistry: searchIndexRegistryExtensionPoint,
       },
