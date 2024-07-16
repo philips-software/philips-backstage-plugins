@@ -34,7 +34,7 @@
   "dependencies": {
     "@backstage/cli": "^0.26.2",
     "@backstage/errors": "^1.2.4",
-    "@manypkg/get-packages": "^2.2.1",
+    "@manypkg/get-packages": "^2.2.2",
     "chalk": "^4.1.2",
     "commander": "^12.0.0",
     "find-up": "^5.0.0",
