@@ -5687,12 +5687,12 @@ __metadata:
     jest-fetch-mock: ^3.0.3
     react: ^16.13.1 || ^17.0.0 || ^18.0.0
     react-dom: ^18.3.1
-    react-router-dom: 6.25.0
+    react-router-dom: 6.25.1
     react-use: ^17.2.4
   peerDependencies:
     react: ^16.13.1 || ^17.0.0 || ^18.0.0
     react-dom: ^18.3.1
-    react-router-dom: 6.25.0
+    react-router-dom: 6.25.1
   languageName: unknown
   linkType: soft
 
@@ -20028,27 +20028,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router-dom@npm:6.25.0":
-  version: 6.25.0
-  resolution: "react-router-dom@npm:6.25.0"
+"react-router-dom@npm:6.25.1":
+  version: 6.25.1
+  resolution: "react-router-dom@npm:6.25.1"
   dependencies:
     "@remix-run/router": 1.18.0
-    react-router: 6.25.0
+    react-router: 6.25.1
   peerDependencies:
     react: ">=16.8"
     react-dom: ">=16.8"
-  checksum: e5198497e6140bd7b238efc1d89a704c65865ce363f2ac1f830197825d25699fdba0b4d775632e7ee40d8aced584d7b0d535ff58302ad9ed4e2d330e04bc1706
+  checksum: fac768bc02cc0f39f5c1f022c8e7323ce9ffcc9b8e80456b51a70ff765854444cb4e6cdbf7d4132064a8fcbeeabeb82b8802614fbe66d8cbe7408e23ee33d789
   languageName: node
   linkType: hard
 
-"react-router@npm:6.25.0":
-  version: 6.25.0
-  resolution: "react-router@npm:6.25.0"
+"react-router@npm:6.25.1":
+  version: 6.25.1
+  resolution: "react-router@npm:6.25.1"
   dependencies:
     "@remix-run/router": 1.18.0
   peerDependencies:
     react: ">=16.8"
-  checksum: 7c98f3f9a5a968086b98bab9c6603b2ebf3e9fca82aaa9f68515fc6d08e88abb292f76445dd4f085aba0479f3d884edd9293a6ff8cc644c2eebb84113f5712bd
+  checksum: 2abbab5ecc5d1210f70980571326fd1956da3898b78bfcce6229e346e658dd42ec75bea1caea6aa45607ef677e442f3241dc3fb839293f276fa4bd466870aadd
   languageName: node
   linkType: hard
 
