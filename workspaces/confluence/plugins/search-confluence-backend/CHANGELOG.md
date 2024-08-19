@@ -1,5 +1,11 @@
 # @philips-software/backstage-plugin-search-confluence-backend
 
+## 2.0.1
+
+### Patch Changes
+
+- 8cd9995: fixed the `token` property in Confluence Integration to be marked as a secret in `config.d.ts`, preventing unintended exposure.
+
 ## 2.0.0
 
 ### Major Changes
