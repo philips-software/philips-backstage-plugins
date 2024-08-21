@@ -76,19 +76,22 @@ export async function createRouter(
       );
     }
 
-    const response = await files.reduce(async (acc, file) => {
-      const responseObject = await acc;
-      const fileContents = (await file.content()).toString();
-      const fileJson = JSON.parse(fileContents);
-      if (fileJson.label === 'uptime') {
-        responseObject.uptime = fileJson;
-      }
+    const response = await files.reduce(
+      async (acc, file) => {
+        const responseObject = await acc;
+        const fileContents = (await file.content()).toString();
+        const fileJson = JSON.parse(fileContents);
+        if (fileJson.label === 'uptime') {
+          responseObject.uptime = fileJson;
+        }
 
-      if (fileJson.label === 'response time') {
-        responseObject.responseTime = fileJson;
-      }
-      return await acc;
-    }, Promise.resolve({} as { uptime: any; responseTime: any }));
+        if (fileJson.label === 'response time') {
+          responseObject.responseTime = fileJson;
+        }
+        return await acc;
+      },
+      Promise.resolve({} as { uptime: any; responseTime: any }),
+    );
 
     res.status(200).json(response);
   });
