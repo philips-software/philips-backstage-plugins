@@ -40,7 +40,7 @@ export interface Config {
       /**
        * @visibility secret
        */
-      auth?: string;
+      token?: string;
     };
     /**
      * @visibility backend

@@ -36,14 +36,14 @@
     "@material-ui/core": "^4.9.13",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.61",
-    "react-use": "^17.2.4"
+    "react-use": "^17.5.1"
   },
   "devDependencies": {
     "@backstage/cli": "^0.26.11",
     "@backstage/core-app-api": "^1.14.0",
     "@backstage/dev-utils": "^1.0.35",
-    "@backstage/test-utils": "^1.5.8",
-    "@testing-library/jest-dom": "^6.4.6",
+    "@backstage/test-utils": "^1.5.9",
+    "@testing-library/jest-dom": "^6.4.7",
     "@testing-library/react": "^15.0.6",
     "@types/node": "*",
     "cross-fetch": "^4.0.0",

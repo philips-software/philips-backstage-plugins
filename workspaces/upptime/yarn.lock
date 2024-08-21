@@ -2935,9 +2935,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/core-app-api@npm:^1.14.0":
-  version: 1.14.0
-  resolution: "@backstage/core-app-api@npm:1.14.0"
+"@backstage/core-app-api@npm:^1.14.0, @backstage/core-app-api@npm:^1.14.1":
+  version: 1.14.1
+  resolution: "@backstage/core-app-api@npm:1.14.1"
   dependencies:
     "@backstage/config": ^1.2.0
     "@backstage/core-plugin-api": ^1.9.3
@@ -2956,7 +2956,7 @@ __metadata:
     react: ^16.13.1 || ^17.0.0 || ^18.0.0
     react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
     react-router-dom: 6.0.0-beta.0 || ^6.3.0
-  checksum: 40c517e43908c070c2bcff5c27e1fabd68bd50df2da3befd9f6e3b6b8e4627484bd53a9ed7ab41a19b706830afba0d82799621dadc96aa3946b601ddcdca019e
+  checksum: ee0c817a65826e0760dc067aafc3622980d7fa5520373c93d12099f844fd1ab55214580b5447fb45b0cd97cace752c98d6166e28b0d8f083711d209eab19d21b
   languageName: node
   linkType: hard
 
@@ -3459,12 +3459,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/test-utils@npm:^1.5.8":
-  version: 1.5.8
-  resolution: "@backstage/test-utils@npm:1.5.8"
+"@backstage/test-utils@npm:^1.5.9":
+  version: 1.5.9
+  resolution: "@backstage/test-utils@npm:1.5.9"
   dependencies:
     "@backstage/config": ^1.2.0
-    "@backstage/core-app-api": ^1.14.0
+    "@backstage/core-app-api": ^1.14.1
     "@backstage/core-plugin-api": ^1.9.3
     "@backstage/plugin-permission-common": ^0.8.0
     "@backstage/plugin-permission-react": ^0.4.24
@@ -3481,7 +3481,7 @@ __metadata:
     react: ^16.13.1 || ^17.0.0 || ^18.0.0
     react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
     react-router-dom: 6.0.0-beta.0 || ^6.3.0
-  checksum: a2b3e1de152f0fd5b1faf0a67b6c90f53d8d87a98d262d1a1b6fd64aeac08e84b4a1b9f4c92b0822199df3eae8a27df7eaec5e91ebc9f4698a5d4b71e6a3fa4e
+  checksum: 96881dbd5fe126d866cdb648218ec374454110c207bc78e6713a9db34d716aaed1c5fdd30ceb621a345540a1642078803156652ef281981c89f485684282453b
   languageName: node
   linkType: hard
 
@@ -4466,7 +4466,7 @@ __metadata:
     "@spotify/prettier-config": ^15.0.0
     node-gyp: ^10.2.0
     prettier: ^3.3.3
-    typescript: ~5.5.3
+    typescript: ~5.5.4
   languageName: unknown
   linkType: soft
 
@@ -5938,12 +5938,12 @@ __metadata:
     "@backstage/core-plugin-api": ^1.9.3
     "@backstage/dev-utils": ^1.0.35
     "@backstage/plugin-catalog-react": ^1.12.2
-    "@backstage/test-utils": ^1.5.8
+    "@backstage/test-utils": ^1.5.9
     "@backstage/theme": ^0.5.6
     "@material-ui/core": ^4.9.13
     "@material-ui/icons": ^4.9.1
     "@material-ui/lab": ^4.0.0-alpha.61
-    "@testing-library/jest-dom": ^6.4.6
+    "@testing-library/jest-dom": ^6.4.7
     "@testing-library/react": ^15.0.6
     "@types/node": "*"
     cross-fetch: ^4.0.0
@@ -5951,7 +5951,7 @@ __metadata:
     react: ^16.13.1 || ^17.0.0 || ^18.0.0
     react-dom: ^18.3.1
     react-router-dom: 6.25.1
-    react-use: ^17.2.4
+    react-use: ^17.5.1
   peerDependencies:
     react: ^16.13.1 || ^17.0.0 || ^18.0.0
     react-dom: ^18.3.1
@@ -7565,9 +7565,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/jest-dom@npm:^6.4.6":
-  version: 6.4.6
-  resolution: "@testing-library/jest-dom@npm:6.4.6"
+"@testing-library/jest-dom@npm:^6.4.7":
+  version: 6.4.7
+  resolution: "@testing-library/jest-dom@npm:6.4.7"
   dependencies:
     "@adobe/css-tools": ^4.4.0
     "@babel/runtime": ^7.9.2
@@ -7594,7 +7594,7 @@ __metadata:
       optional: true
     vitest:
       optional: true
-  checksum: d70acbfc5d842065292dc1b4113ac2b4c2a2b83f9868e454d7f24d97ee92fddf7852e0e079b6eecaf21154bfe6e9ad03eb32e72f16854f64d7ce1ff42288828b
+  checksum: 53cfe29a7d753c478cf1ca4c5c05cd12acf1ef917a5a843e68b5f48ae586a5f890864a5d0d69180c1d076445032098dd33db1de87a19e0d2f28e6d31edc4e12d
   languageName: node
   linkType: hard
 
@@ -13294,13 +13294,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-loops@npm:^1.1.3":
-  version: 1.1.3
-  resolution: "fast-loops@npm:1.1.3"
-  checksum: b674378ba2ed8364ca1a00768636e88b22201c8d010fa62a8588a4cace04f90bac46714c13cf638be82b03438d2fe813600da32291fb47297a1bd7fa6cef0cee
-  languageName: node
-  linkType: hard
-
 "fast-memoize@npm:^2.5.2":
   version: 2.5.2
   resolution: "fast-memoize@npm:2.5.2"
@@ -14925,13 +14918,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"inline-style-prefixer@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "inline-style-prefixer@npm:7.0.0"
+"inline-style-prefixer@npm:^7.0.1":
+  version: 7.0.1
+  resolution: "inline-style-prefixer@npm:7.0.1"
   dependencies:
     css-in-js-utils: ^3.1.0
-    fast-loops: ^1.1.3
-  checksum: 89fd73eb06e7392e24032ea33b8b33ae7f9a24298f2d9ebbf7b31a3a3934247270047f4f49a454a363aace14e25c3a20fd97465405b0399cc888e5a2bc04ec05
+  checksum: 07a72573dfdac5e08fa18f5ce71d922861716955e230175ac415db227d9ed49443c764356cb407a92f4c85b30ebf39604165260b4dfbf3196b7736d7332c5c06
   languageName: node
   linkType: hard
 
@@ -18422,22 +18414,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nano-css@npm:^5.6.1":
-  version: 5.6.1
-  resolution: "nano-css@npm:5.6.1"
+"nano-css@npm:^5.6.2":
+  version: 5.6.2
+  resolution: "nano-css@npm:5.6.2"
   dependencies:
     "@jridgewell/sourcemap-codec": ^1.4.15
     css-tree: ^1.1.2
     csstype: ^3.1.2
     fastest-stable-stringify: ^2.0.2
-    inline-style-prefixer: ^7.0.0
+    inline-style-prefixer: ^7.0.1
     rtl-css-js: ^1.16.1
     stacktrace-js: ^2.0.2
     stylis: ^4.3.0
   peerDependencies:
     react: "*"
     react-dom: "*"
-  checksum: 735f02c030a9416bb6060503d24f18f2b2c9f43e4893c2d8714508d00f9d114b8a134df3623e94e376b0b1d794b0cacac6a48f8e5fb2b7fa8996071bcad590b8
+  checksum: 85d5e730798387bee3090e9943801489ec4269bd376a848b75515cf0f44dc7ce53d4a9fec575081a7dff53a8a5d4b00eebdc1bbf217d75fae7195819f917aba1
   languageName: node
   linkType: hard
 
@@ -20758,9 +20750,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-use@npm:^17.2.4, react-use@npm:^17.3.2":
-  version: 17.5.0
-  resolution: "react-use@npm:17.5.0"
+"react-use@npm:^17.2.4, react-use@npm:^17.3.2, react-use@npm:^17.5.1":
+  version: 17.5.1
+  resolution: "react-use@npm:17.5.1"
   dependencies:
     "@types/js-cookie": ^2.2.6
     "@xobotyi/scrollbar-width": ^1.9.5
@@ -20768,7 +20760,7 @@ __metadata:
     fast-deep-equal: ^3.1.3
     fast-shallow-equal: ^1.0.0
     js-cookie: ^2.2.1
-    nano-css: ^5.6.1
+    nano-css: ^5.6.2
     react-universal-interface: ^0.6.2
     resize-observer-polyfill: ^1.5.1
     screenfull: ^5.1.0
@@ -20779,7 +20771,7 @@ __metadata:
   peerDependencies:
     react: "*"
     react-dom: "*"
-  checksum: d3164db313f27aa701dcf87177861db6e19624ea7dd8bc81805352af7f6bf04072010b9776da4ac458d6bd318759ee69b12763d96098d83c75b7d66ffc689e3a
+  checksum: 68f4333d986161038308a844d4ab99103484b69a0599a03c345eeb7cb5a0eabd0c55994fefc471ef11d4d2799a8e063d7f11fe0c48d56b54516333025fc7d726
   languageName: node
   linkType: hard
 
@@ -23507,13 +23499,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:~5.5.3":
-  version: 5.5.3
-  resolution: "typescript@npm:5.5.3"
+"typescript@npm:~5.5.4":
+  version: 5.5.4
+  resolution: "typescript@npm:5.5.4"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 4b4f14313484d5c86064d04ba892544801fa551f5cf72719b540b498056fec7fc192d0bbdb2ba1448e759b1548769956da9e43e7c16781e8d8856787b0575004
+  checksum: b309040f3a1cd91c68a5a58af6b9fdd4e849b8c42d837b2c2e73f9a4f96a98c4f1ed398a9aab576ee0a4748f5690cf594e6b99dbe61de7839da748c41e6d6ca8
   languageName: node
   linkType: hard
 
@@ -23537,13 +23529,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@~5.5.3#~builtin<compat/typescript>":
-  version: 5.5.3
-  resolution: "typescript@patch:typescript@npm%3A5.5.3#~builtin<compat/typescript>::version=5.5.3&hash=a1c5e5"
+"typescript@patch:typescript@~5.5.4#~builtin<compat/typescript>":
+  version: 5.5.4
+  resolution: "typescript@patch:typescript@npm%3A5.5.4#~builtin<compat/typescript>::version=5.5.4&hash=a1c5e5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 6853be4607706cc1ad2f16047cf1cd72d39f79acd5f9716e1d23bc0e462c7f59be7458fe58a21665e7657a05433d7ab8419d093a5a4bd5f3a33f879b35d2769b
+  checksum: fc52962f31a5bcb716d4213bef516885e4f01f30cea797a831205fc9ef12b405a40561c40eae3127ab85ba1548e7df49df2bcdee6b84a94bfbe3a0d7eff16b14
   languageName: node
   linkType: hard
 
