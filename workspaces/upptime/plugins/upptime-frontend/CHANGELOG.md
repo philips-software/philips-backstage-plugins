@@ -1,5 +1,13 @@
 # @philips-software/backstage-plugin-upptime-frontend
 
+## 1.3.1
+
+### Patch Changes
+
+- aacb179: Updated dependency `@testing-library/jest-dom` to `^6.4.7`.
+- 5ec1455: Updated dependency `@backstage/test-utils` to `^1.5.9`.
+- f3d9479: Updated dependency `react-use` to `^17.5.1`.
+
 ## 1.3.0
 
 ### Minor Changes

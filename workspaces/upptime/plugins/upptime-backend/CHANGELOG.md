@@ -1,5 +1,11 @@
 # @philips-software/backstage-plugin-upptime-backend
 
+## 1.4.1
+
+### Patch Changes
+
+- 37f209d: Bumped prettier version
+
 ## 1.4.0
 
 ### Minor Changes
