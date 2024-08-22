@@ -1,11 +1,12 @@
 /* istanbul ignore file */
-import { UrlReaders, createServiceBuilder } from '@backstage/backend-common';
+import { createServiceBuilder } from '@backstage/backend-common';
 import { Server } from 'http';
 import { Logger } from 'winston';
 import { createRouter } from './router';
-import { ConfigReader } from '@backstage/config';
 import { CatalogApi } from '@backstage/catalog-client';
 import { AuthService, HttpAuthService } from '@backstage/backend-plugin-api';
+
+import { mockServices } from '@backstage/backend-test-utils';
 
 export interface ServerOptions {
   port: number;
@@ -17,11 +18,13 @@ export async function startStandaloneServer(
   options: ServerOptions,
 ): Promise<Server> {
   const logger = options.logger.child({ service: 'upptime-backend' });
-  const config = new ConfigReader({
-    upptime: {
-      locations: {
-        default: {
-          url: 'https://github.com/upptime/upptime/',
+  const config = mockServices.rootConfig({
+    data: {
+      upptime: {
+        locations: {
+          default: {
+            url: 'https://github.com/upptime/upptime/',
+          },
         },
       },
     },
@@ -42,10 +45,7 @@ export async function startStandaloneServer(
     },
   } as unknown as CatalogApi;
 
-  const mockUrlReader = UrlReaders.default({
-    logger: logger,
-    config: config,
-  });
+  const mockUrlReader = mockServices.urlReader.mock();
   const auth = {
     getPluginRequestToken: jest.fn().mockResolvedValue({ token: 'mytoken' }),
     getOwnServiceCredentials: jest.fn(),
