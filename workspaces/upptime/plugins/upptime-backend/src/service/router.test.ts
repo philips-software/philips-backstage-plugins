@@ -1,16 +1,17 @@
-import {
-  ReadTreeResponse,
-  ReadTreeResponseFile,
-  UrlReader,
-  getVoidLogger,
-} from '@backstage/backend-common';
 import express from 'express';
 import request from 'supertest';
 import { Entity } from '@backstage/catalog-model';
 import { createRouter } from './router';
 import { ConfigReader } from '@backstage/config';
 import { CatalogApi } from '@backstage/catalog-client';
-import { AuthService, HttpAuthService } from '@backstage/backend-plugin-api';
+import {
+  AuthService,
+  HttpAuthService,
+  UrlReaderService,
+  UrlReaderServiceReadTreeResponse,
+  UrlReaderServiceReadTreeResponseFile,
+} from '@backstage/backend-plugin-api';
+import { mockServices } from '@backstage/backend-test-utils';
 
 describe('createRouter', () => {
   let app: express.Express;
@@ -21,7 +22,7 @@ describe('createRouter', () => {
   };
   const catalogApi = mockCatalogApi as unknown as CatalogApi;
 
-  const mockUrlReader: jest.Mocked<UrlReader> = {
+  const mockUrlReader: jest.Mocked<UrlReaderService> = {
     readUrl: jest.fn(),
     readTree: jest.fn(),
     search: jest.fn(),
@@ -49,7 +50,7 @@ describe('createRouter', () => {
     jest.resetAllMocks();
     auth.getPluginRequestToken.mockResolvedValue({ token: 'mytoken' });
     const router = await createRouter({
-      logger: getVoidLogger(),
+      logger: mockServices.logger.mock(),
       catalog: catalogApi,
       config,
       reader: mockUrlReader,
@@ -224,8 +225,9 @@ describe('createRouter', () => {
       });
 
       mockUrlReader.readTree.mockResolvedValue({
-        files: async () => [] as unknown as ReadTreeResponseFile[],
-      } as unknown as ReadTreeResponse);
+        files: async () =>
+          [] as unknown as UrlReaderServiceReadTreeResponseFile[],
+      } as unknown as UrlReaderServiceReadTreeResponse);
 
       const response = await request(app).get(endpoint);
 
@@ -252,9 +254,9 @@ function getReadTreeResponse() {
             );
           },
         },
-      ] as unknown as ReadTreeResponse;
+      ] as unknown as UrlReaderServiceReadTreeResponse;
     },
-  } as unknown as ReadTreeResponse;
+  } as unknown as UrlReaderServiceReadTreeResponse;
 }
 
 function getGraphPngBuffer() {

@@ -1,4 +1,4 @@
-import { UrlReader, errorHandler } from '@backstage/backend-common';
+import { errorHandler } from '@backstage/backend-common';
 import express from 'express';
 import Router from 'express-promise-router';
 import { CatalogApi } from '@backstage/catalog-client';
@@ -11,6 +11,7 @@ import {
   AuthService,
   HttpAuthService,
   LoggerService,
+  UrlReaderService,
 } from '@backstage/backend-plugin-api';
 import { UPPTIME_ANNOTATION } from '../constants';
 
@@ -18,7 +19,7 @@ export interface RouterOptions {
   logger: LoggerService;
   catalog: CatalogApi;
   config: Config;
-  reader: UrlReader;
+  reader: UrlReaderService;
   auth: AuthService;
   httpAuth: HttpAuthService;
 }
