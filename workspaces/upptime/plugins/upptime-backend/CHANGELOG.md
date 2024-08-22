@@ -1,5 +1,11 @@
 # @philips-software/backstage-plugin-upptime-backend
 
+## 2.0.0
+
+### Major Changes
+
+- 9915c28: Bumped to backstage 1.30.2 dependencies
+
 ## 1.4.1
 
 ### Patch Changes
