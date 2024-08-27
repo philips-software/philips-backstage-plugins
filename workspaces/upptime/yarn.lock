@@ -6162,7 +6162,7 @@ __metadata:
     "@material-ui/core": ^4.9.13
     "@material-ui/icons": ^4.9.1
     "@material-ui/lab": ^4.0.0-alpha.61
-    "@testing-library/jest-dom": ^6.4.7
+    "@testing-library/jest-dom": ^6.5.0
     "@testing-library/react": ^15.0.6
     "@types/node": "*"
     cross-fetch: ^4.0.0
@@ -7784,36 +7784,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/jest-dom@npm:^6.4.7":
-  version: 6.4.7
-  resolution: "@testing-library/jest-dom@npm:6.4.7"
+"@testing-library/jest-dom@npm:^6.5.0":
+  version: 6.5.0
+  resolution: "@testing-library/jest-dom@npm:6.5.0"
   dependencies:
     "@adobe/css-tools": ^4.4.0
-    "@babel/runtime": ^7.9.2
     aria-query: ^5.0.0
     chalk: ^3.0.0
     css.escape: ^1.5.1
     dom-accessibility-api: ^0.6.3
     lodash: ^4.17.21
     redent: ^3.0.0
-  peerDependencies:
-    "@jest/globals": ">= 28"
-    "@types/bun": "*"
-    "@types/jest": ">= 28"
-    jest: ">= 28"
-    vitest: ">= 0.32"
-  peerDependenciesMeta:
-    "@jest/globals":
-      optional: true
-    "@types/bun":
-      optional: true
-    "@types/jest":
-      optional: true
-    jest:
-      optional: true
-    vitest:
-      optional: true
-  checksum: 53cfe29a7d753c478cf1ca4c5c05cd12acf1ef917a5a843e68b5f48ae586a5f890864a5d0d69180c1d076445032098dd33db1de87a19e0d2f28e6d31edc4e12d
+  checksum: c2d14103ebe3358852ec527ff7512f64207a39932b2f7b6dff7e73ba91296b01a71bad9a9584b6ee010681380a906c1740af50470adc6db660e1c7585d012ebf
   languageName: node
   linkType: hard
 
