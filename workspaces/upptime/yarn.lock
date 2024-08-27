@@ -3331,9 +3331,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/plugin-catalog-backend@npm:^1.25.0":
-  version: 1.25.0
-  resolution: "@backstage/plugin-catalog-backend@npm:1.25.0"
+"@backstage/plugin-catalog-backend@npm:^1.25.1":
+  version: 1.25.1
+  resolution: "@backstage/plugin-catalog-backend@npm:1.25.1"
   dependencies:
     "@backstage/backend-common": ^0.24.0
     "@backstage/backend-openapi-utils": ^0.1.16
@@ -3370,7 +3370,7 @@ __metadata:
     yaml: ^2.0.0
     yn: ^4.0.0
     zod: ^3.22.4
-  checksum: c3c21b249fa3abbdd3abfe86d9c61768f05c5abe2caac94fd7a175f20c1157a532b876682b9aa11e0a38d846407d92d28af7a8ad49add147e70d3612fb660b0f
+  checksum: c0cfe33bf36c4624bc204b2901e4320fd45b18b2dd1dda0eca249ebb43adb05b0550bf2148be9a6ef4be801dcc0489ba7823e188f6b597dff4e9eef275d16f2a
   languageName: node
   linkType: hard
 
@@ -6134,7 +6134,7 @@ __metadata:
     "@backstage/cli": ^0.27.0
     "@backstage/config": ^1.2.0
     "@backstage/errors": ^1.2.4
-    "@backstage/plugin-catalog-backend": ^1.25.0
+    "@backstage/plugin-catalog-backend": ^1.25.1
     "@types/express": "*"
     "@types/supertest": ^6.0.2
     express: ^4.17.1
