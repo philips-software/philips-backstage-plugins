@@ -1,5 +1,15 @@
 # @philips-software/backstage-plugin-upptime-frontend
 
+## 2.1.0
+
+### Minor Changes
+
+- 0cc45b2: Update to backstage 1.31.2
+
+### Patch Changes
+
+- 53b563c: Updated dependency `react-router-dom` to `6.26.2`.
+
 ## 2.0.1
 
 ### Patch Changes
