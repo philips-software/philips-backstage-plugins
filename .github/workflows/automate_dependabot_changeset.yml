@@ -33,8 +33,30 @@ jobs:
           git config --global user.email noreply@philips.com
           git config --global user.name 'Github changeset workflow'
 
+      - name: Set up Node
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4
+        with:
+          node-version: 20
+
+      - name: Fetch previous commit for check
+        run: git fetch origin '${{ github.event.pull_request.base.sha }}'
+
+      - name: Find changed workspaces
+        id: find-changed-workspaces
+        run: node ./scripts/ci/list-workspaces-with-changes.js
+        env:
+          COMMIT_SHA_BEFORE: "${{ github.event.pull_request.base.sha }}"
+
       - name: Generate feedback
         uses: philips-software/backstage-actions/renovate-changesets@main
         with:
           multiple-workspaces: true
           dependency-manager: dependabot
+
+      - name: Remove lockfile duplicates
+        run: node ./scripts/ci/yarn-dedupe-workspace.js '${{ steps.find-changed-workspaces.outputs.workspaces }}'
+
+      - name: Commit Lockfile Changes
+        run: |
+          git commit -am "Automated de-duplication of lockfile"
+          git push
