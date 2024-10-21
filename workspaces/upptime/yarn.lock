@@ -3073,32 +3073,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/core-app-api@npm:^1.15.0":
-  version: 1.15.0
-  resolution: "@backstage/core-app-api@npm:1.15.0"
-  dependencies:
-    "@backstage/config": ^1.2.0
-    "@backstage/core-plugin-api": ^1.9.4
-    "@backstage/types": ^1.1.1
-    "@backstage/version-bridge": ^1.0.9
-    "@types/prop-types": ^15.7.3
-    "@types/react": ^16.13.1 || ^17.0.0 || ^18.0.0
-    history: ^5.0.0
-    i18next: ^22.4.15
-    lodash: ^4.17.21
-    prop-types: ^15.7.2
-    react-use: ^17.2.4
-    zen-observable: ^0.10.0
-    zod: ^3.22.4
-  peerDependencies:
-    react: ^16.13.1 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
-    react-router-dom: 6.0.0-beta.0 || ^6.3.0
-  checksum: 4e625dd3d9679d64e25e40a8c5436b3c30b5b4c113d320eede8c35b1dc84cc77b3527e0d3a099a79ccfbe34d20da0979b49cbc3ae3c3472feb75b87550594bdf
-  languageName: node
-  linkType: hard
-
-"@backstage/core-app-api@npm:^1.15.1":
+"@backstage/core-app-api@npm:^1.15.0, @backstage/core-app-api@npm:^1.15.1":
   version: 1.15.1
   resolution: "@backstage/core-app-api@npm:1.15.1"
   dependencies:
@@ -3191,7 +3166,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/core-plugin-api@npm:^1.10.0":
+"@backstage/core-plugin-api@npm:^1.10.0, @backstage/core-plugin-api@npm:^1.9.4":
   version: 1.10.0
   resolution: "@backstage/core-plugin-api@npm:1.10.0"
   dependencies:
@@ -3209,24 +3184,6 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 50647e0a33946a981cdb9b03c7282e761ff95b4fc33f3dcbaa08536740e8be0d555e0d8995fb66484eb5518a10583113df31965d15e2786a388d16ae54a7fba6
-  languageName: node
-  linkType: hard
-
-"@backstage/core-plugin-api@npm:^1.9.4":
-  version: 1.9.4
-  resolution: "@backstage/core-plugin-api@npm:1.9.4"
-  dependencies:
-    "@backstage/config": ^1.2.0
-    "@backstage/errors": ^1.2.4
-    "@backstage/types": ^1.1.1
-    "@backstage/version-bridge": ^1.0.9
-    "@types/react": ^16.13.1 || ^17.0.0 || ^18.0.0
-    history: ^5.0.0
-  peerDependencies:
-    react: ^16.13.1 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
-    react-router-dom: 6.0.0-beta.0 || ^6.3.0
-  checksum: 921b1185a2b68363f2cfe66f5cfa003c2f56abb252f75b0d37d49eb586d5e1347d34e846eb72bab71df5f478f106de1fe7e0e05876e559e2c28b23d849994910
   languageName: node
   linkType: hard
 
@@ -3534,24 +3491,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/plugin-permission-react@npm:^0.4.26":
-  version: 0.4.26
-  resolution: "@backstage/plugin-permission-react@npm:0.4.26"
-  dependencies:
-    "@backstage/config": ^1.2.0
-    "@backstage/core-plugin-api": ^1.9.4
-    "@backstage/plugin-permission-common": ^0.8.1
-    "@types/react": ^16.13.1 || ^17.0.0 || ^18.0.0
-    swr: ^2.0.0
-  peerDependencies:
-    react: ^16.13.1 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
-    react-router-dom: 6.0.0-beta.0 || ^6.3.0
-  checksum: ad7901bfbe10e637be017ecef55b1e2db9d9e83bde7e81b742f44e2bd71a0f24c7b27e651653b6654938a5c13729b5a89183cd9518f447c445688c052f3698d9
-  languageName: node
-  linkType: hard
-
-"@backstage/plugin-permission-react@npm:^0.4.27":
+"@backstage/plugin-permission-react@npm:^0.4.26, @backstage/plugin-permission-react@npm:^0.4.27":
   version: 0.4.27
   resolution: "@backstage/plugin-permission-react@npm:0.4.27"
   dependencies:
@@ -3757,7 +3697,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/version-bridge@npm:^1.0.10":
+"@backstage/version-bridge@npm:^1.0.10, @backstage/version-bridge@npm:^1.0.9":
   version: 1.0.10
   resolution: "@backstage/version-bridge@npm:1.0.10"
   peerDependencies:
@@ -3769,19 +3709,6 @@ __metadata:
     "@types/react":
       optional: true
   checksum: f24c02c071aecf5a9557602252dc458a6db93393960b9f4a51dc649c1886afcfaae3f3a46ce3c846721ea56a112c0c604de52782e19f495daec2b16ae7e72af4
-  languageName: node
-  linkType: hard
-
-"@backstage/version-bridge@npm:^1.0.9":
-  version: 1.0.9
-  resolution: "@backstage/version-bridge@npm:1.0.9"
-  dependencies:
-    "@types/react": ^16.13.1 || ^17.0.0
-  peerDependencies:
-    react: ^16.13.1 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
-    react-router-dom: 6.0.0-beta.0 || ^6.3.0
-  checksum: eb805a747c66a9c78654109d6774d5a7c16175240fe9441c71800d7b2b9965e6e04960af902cbaf4fc9eb15e9c665888cf6e1b7c4e4f157c8617873999545c0f
   languageName: node
   linkType: hard
 
