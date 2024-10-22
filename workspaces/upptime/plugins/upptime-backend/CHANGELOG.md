@@ -1,5 +1,16 @@
 # @philips-software/backstage-plugin-upptime-backend
 
+## 2.2.0
+
+### Minor Changes
+
+- 968c0a7: Update to backstage 1.32.2
+
+### Patch Changes
+
+- 633c939: Updated dependency `express` to `^4.21.1`.
+- 139326c: Updated dependency `winston` to `^3.15.0`.
+
 ## 2.1.0
 
 ### Minor Changes

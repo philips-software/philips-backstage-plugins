@@ -1,5 +1,11 @@
 # @philips-software/backstage-plugin-upptime-frontend
 
+## 2.2.0
+
+### Minor Changes
+
+- 968c0a7: Update to backstage 1.32.2
+
 ## 2.1.0
 
 ### Minor Changes
