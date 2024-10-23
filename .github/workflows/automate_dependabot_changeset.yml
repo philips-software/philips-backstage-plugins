@@ -58,5 +58,10 @@ jobs:
 
       - name: Commit Lockfile Changes
         run: |
-          git commit -am "Automated de-duplication of lockfile"
-          git push
+          # Check for changes
+          if ! git diff-index --quiet HEAD --; then
+            git commit -am "Automated de-duplication of lockfile"
+            git push
+          else
+              echo "No changes to commit."
+          fi
