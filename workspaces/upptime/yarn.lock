@@ -2808,7 +2808,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/backend-plugin-api@npm:^1.0.0, @backstage/backend-plugin-api@npm:^1.0.1":
+"@backstage/backend-plugin-api@backstage:1.32.3, @backstage/backend-plugin-api@npm:^1.0.0, @backstage/backend-plugin-api@npm:^1.0.1":
   version: 1.0.1
   resolution: "@backstage/backend-plugin-api@npm:1.0.1"
   dependencies:
@@ -2827,7 +2827,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/backend-test-utils@npm:^1.0.2":
+"@backstage/backend-test-utils@backstage:1.32.3":
   version: 1.0.2
   resolution: "@backstage/backend-test-utils@npm:1.0.2"
   dependencies:
@@ -2865,7 +2865,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/catalog-client@npm:^1.7.1":
+"@backstage/catalog-client@backstage:1.32.3, @backstage/catalog-client@npm:^1.7.1":
   version: 1.7.1
   resolution: "@backstage/catalog-client@npm:1.7.1"
   dependencies:
@@ -2877,7 +2877,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/catalog-model@npm:^1.7.0":
+"@backstage/catalog-model@backstage:1.32.3, @backstage/catalog-model@npm:^1.7.0":
   version: 1.7.0
   resolution: "@backstage/catalog-model@npm:1.7.0"
   dependencies:
@@ -2912,9 +2912,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/cli@npm:^0.28.0":
-  version: 0.28.0
-  resolution: "@backstage/cli@npm:0.28.0"
+"@backstage/cli@backstage:1.32.3":
+  version: 0.28.1
+  resolution: "@backstage/cli@npm:0.28.1"
   dependencies:
     "@backstage/catalog-model": "npm:^1.7.0"
     "@backstage/cli-common": "npm:^0.1.14"
@@ -3060,7 +3060,7 @@ __metadata:
       optional: true
   bin:
     backstage-cli: bin/backstage-cli
-  checksum: 10/95335697f66a20b73424722a957914a5ae94b107aefb9f448155beefb8c7d3bad93ee7e2da53de4da3d3940a08d96766ff47f4382b5a59463a9d32e23aab2481
+  checksum: 10/19d2043e218667a9fdd50fe4d53da14e475af48f95b3cba53bb34635f2e67bd5dd4fc30cefc16fc3992a04b083475be5dffb76c328179c3452ddd2acb1bd3961
   languageName: node
   linkType: hard
 
@@ -3088,7 +3088,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/config@npm:^1.2.0":
+"@backstage/config@backstage:1.32.3, @backstage/config@npm:^1.2.0":
   version: 1.2.0
   resolution: "@backstage/config@npm:1.2.0"
   dependencies:
@@ -3098,7 +3098,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/core-app-api@npm:^1.15.1":
+"@backstage/core-app-api@backstage:1.32.3, @backstage/core-app-api@npm:^1.15.1":
   version: 1.15.1
   resolution: "@backstage/core-app-api@npm:1.15.1"
   dependencies:
@@ -3146,7 +3146,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/core-components@npm:^0.15.1":
+"@backstage/core-components@backstage:1.32.3, @backstage/core-components@npm:^0.15.1":
   version: 0.15.1
   resolution: "@backstage/core-components@npm:0.15.1"
   dependencies:
@@ -3198,7 +3198,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/core-plugin-api@npm:^1.10.0":
+"@backstage/core-plugin-api@backstage:1.32.3, @backstage/core-plugin-api@npm:^1.10.0":
   version: 1.10.0
   resolution: "@backstage/core-plugin-api@npm:1.10.0"
   dependencies:
@@ -3219,7 +3219,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/dev-utils@npm:^1.1.2":
+"@backstage/dev-utils@backstage:1.32.3":
   version: 1.1.2
   resolution: "@backstage/dev-utils@npm:1.1.2"
   dependencies:
@@ -3246,7 +3246,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/e2e-test-utils@npm:^0.1.1":
+"@backstage/e2e-test-utils@backstage:1.32.3":
   version: 0.1.1
   resolution: "@backstage/e2e-test-utils@npm:0.1.1"
   dependencies:
@@ -3261,7 +3261,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/errors@npm:^1.2.4":
+"@backstage/errors@backstage:1.32.3, @backstage/errors@npm:^1.2.4":
   version: 1.2.4
   resolution: "@backstage/errors@npm:1.2.4"
   dependencies:
@@ -3483,7 +3483,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/plugin-catalog-backend@npm:^1.27.1":
+"@backstage/plugin-catalog-backend@backstage:1.32.3":
   version: 1.27.1
   resolution: "@backstage/plugin-catalog-backend@npm:1.27.1"
   dependencies:
@@ -3553,7 +3553,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/plugin-catalog-react@npm:^1.14.0":
+"@backstage/plugin-catalog-react@backstage:1.32.3, @backstage/plugin-catalog-react@npm:^1.14.0":
   version: 1.14.0
   resolution: "@backstage/plugin-catalog-react@npm:1.14.0"
   dependencies:
@@ -3718,7 +3718,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/repo-tools@npm:^0.10.0":
+"@backstage/repo-tools@backstage:1.32.3":
   version: 0.10.0
   resolution: "@backstage/repo-tools@npm:0.10.0"
   dependencies:
@@ -3772,7 +3772,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/test-utils@npm:^1.7.0":
+"@backstage/test-utils@backstage:1.32.3, @backstage/test-utils@npm:^1.7.0":
   version: 1.7.0
   resolution: "@backstage/test-utils@npm:1.7.0"
   dependencies:
@@ -3804,7 +3804,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/theme@npm:^0.6.0":
+"@backstage/theme@backstage:1.32.3, @backstage/theme@npm:^0.6.0":
   version: 0.6.0
   resolution: "@backstage/theme@npm:0.6.0"
   dependencies:
@@ -4872,9 +4872,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@internal/upptime@workspace:."
   dependencies:
-    "@backstage/cli": "npm:^0.28.0"
-    "@backstage/e2e-test-utils": "npm:^0.1.1"
-    "@backstage/repo-tools": "npm:^0.10.0"
+    "@backstage/cli": "backstage:^"
+    "@backstage/e2e-test-utils": "backstage:^"
+    "@backstage/repo-tools": "backstage:^"
     "@changesets/cli": "npm:^2.27.9"
     "@spotify/prettier-config": "npm:^15.0.0"
     node-gyp: "npm:^10.2.0"
@@ -6401,14 +6401,14 @@ __metadata:
   resolution: "@philips-software/backstage-plugin-upptime-backend@workspace:plugins/upptime-backend"
   dependencies:
     "@backstage/backend-common": "npm:^0.25.0"
-    "@backstage/backend-plugin-api": "npm:^1.0.1"
-    "@backstage/backend-test-utils": "npm:^1.0.2"
-    "@backstage/catalog-client": "npm:^1.7.1"
-    "@backstage/catalog-model": "npm:^1.7.0"
-    "@backstage/cli": "npm:^0.28.0"
-    "@backstage/config": "npm:^1.2.0"
-    "@backstage/errors": "npm:^1.2.4"
-    "@backstage/plugin-catalog-backend": "npm:^1.27.1"
+    "@backstage/backend-plugin-api": "backstage:^"
+    "@backstage/backend-test-utils": "backstage:^"
+    "@backstage/catalog-client": "backstage:^"
+    "@backstage/catalog-model": "backstage:^"
+    "@backstage/cli": "backstage:^"
+    "@backstage/config": "backstage:^"
+    "@backstage/errors": "backstage:^"
+    "@backstage/plugin-catalog-backend": "backstage:^"
     "@types/express": "npm:*"
     "@types/supertest": "npm:^6.0.2"
     express: "npm:^4.21.1"
@@ -6424,15 +6424,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@philips-software/backstage-plugin-upptime-frontend@workspace:plugins/upptime-frontend"
   dependencies:
-    "@backstage/catalog-model": "npm:^1.7.0"
-    "@backstage/cli": "npm:^0.28.0"
-    "@backstage/core-app-api": "npm:^1.15.1"
-    "@backstage/core-components": "npm:^0.15.1"
-    "@backstage/core-plugin-api": "npm:^1.10.0"
-    "@backstage/dev-utils": "npm:^1.1.2"
-    "@backstage/plugin-catalog-react": "npm:^1.14.0"
-    "@backstage/test-utils": "npm:^1.7.0"
-    "@backstage/theme": "npm:^0.6.0"
+    "@backstage/catalog-model": "backstage:^"
+    "@backstage/cli": "backstage:^"
+    "@backstage/core-app-api": "backstage:^"
+    "@backstage/core-components": "backstage:^"
+    "@backstage/core-plugin-api": "backstage:^"
+    "@backstage/dev-utils": "backstage:^"
+    "@backstage/plugin-catalog-react": "backstage:^"
+    "@backstage/test-utils": "backstage:^"
+    "@backstage/theme": "backstage:^"
     "@material-ui/core": "npm:^4.9.13"
     "@material-ui/icons": "npm:^4.9.1"
     "@material-ui/lab": "npm:^4.0.0-alpha.61"
