@@ -6,7 +6,7 @@
 import { BackendFeature } from '@backstage/backend-plugin-api';
 
 // @public
-const confluencePlugin: () => BackendFeature;
+const confluencePlugin: BackendFeature;
 export default confluencePlugin;
 
 // (No @packageDocumentation comment for this package)
