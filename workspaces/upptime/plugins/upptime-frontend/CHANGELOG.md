@@ -1,5 +1,16 @@
 # @philips-software/backstage-plugin-upptime-frontend
 
+## 2.3.0
+
+### Minor Changes
+
+- 5f1eb70: Bump to backstage version 1.32.2
+
+### Patch Changes
+
+- ea8548a: Updated dependency `@testing-library/jest-dom` to `^6.6.2`.
+- 254d84d: Updated dependency `react-router-dom` to `6.27.0`.
+
 ## 2.2.0
 
 ### Minor Changes
