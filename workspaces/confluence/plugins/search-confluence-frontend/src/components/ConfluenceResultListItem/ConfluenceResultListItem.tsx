@@ -48,11 +48,27 @@ export type IndexableConfluenceDocument = IndexableDocument & {
   }[];
 };
 
+/**
+ * Props for the Confluence search result item.
+ *
+ * @public
+ */
 export interface ConfluenceResultItemProps {
+  /**
+   * The search result item.
+   */
   result?: IndexableDocument;
+  /**
+   * The highlight information for the search result item.
+   */
   highlight?: ResultHighlight;
 }
 
+/**
+ * A single search result item for Confluence documents.
+ *
+ * @public
+ */
 export const ConfluenceResultListItem = ({
   result,
   highlight,

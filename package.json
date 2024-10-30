@@ -10,10 +10,10 @@
     "create-workspace": "community-cli workspace create"
   },
   "type": "module",
-  "packageManager": "yarn@3.2.3",
+  "packageManager": "yarn@4.5.1",
   "dependencies": {
     "@backstage-community/cli": "portal:./workspaces/repo-tools/packages/cli",
-    "@backstage/cli-node": "^0.2.7",
+    "@backstage/cli-node": "backstage:^",
     "@changesets/parse": "^0.4.0"
   }
 }
