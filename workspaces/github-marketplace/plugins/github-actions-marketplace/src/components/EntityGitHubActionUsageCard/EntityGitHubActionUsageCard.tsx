@@ -32,8 +32,8 @@ export const EntityGitHubActionUsageCard = () => {
         }}
       >
         <Typography variant="body2">
-          Learn more on how to use this GitHub Action by reviewing different
-          implementations in {{ owner }}`:
+          {`Learn more on how to use this GitHub Action by reviewing different
+          implementations in ${owner}`}
         </Typography>
         <LinkButton
           color="primary"
@@ -42,7 +42,7 @@ export const EntityGitHubActionUsageCard = () => {
           classes={{ root: classes.button }}
           to={link({ owner: owner, name: repo })}
         >
-          Examples on {{ owner }}
+          {`Examples on ${owner}`}
         </LinkButton>
       </CardContent>
     </Card>
