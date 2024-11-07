@@ -1,6 +1,7 @@
-export {
-  marketplacePlugin,
-  Marketplace,
-  EntityGitHubActionInstallationCard,
-  EntityGitHubActionUsageCard,
-} from './plugin';
+/**
+ * GitHub Actions Marketplace Plugin
+ *
+ * @packageDocumentation
+ */
+
+export * from './plugin';

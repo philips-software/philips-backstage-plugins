@@ -14,15 +14,31 @@ import React, { ComponentType } from 'react';
 import { Entity } from '@backstage/catalog-model';
 import { TemplateList } from '../TemplateList';
 
-export interface DefaultCatalogPageProps {
+/**
+ * Default Catalog Page Props
+ *
+ * @public
+ */
+export interface MarketplaceProps {
+  /**
+   * Template Card Component
+   */
   TemplateCardComponent?: ComponentType<{ template: TemplateEntityV1beta3 }>;
+  /**
+   * Groups that can be used to filter and group the templates
+   */
   groups?: Array<{
     title?: React.ReactNode;
     filter: (entity: Entity) => boolean;
   }>;
 }
 
-export const MarketPlace = (props: DefaultCatalogPageProps) => {
+/**
+ * GitHub Marketplace Page
+ *
+ * @returns
+ */
+export const MarketPlace = (props: MarketplaceProps) => {
   const { TemplateCardComponent, groups } = props;
 
   const otherTemplatesGroup = {

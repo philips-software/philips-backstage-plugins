@@ -3,15 +3,25 @@ import {
   createPlugin,
   createRoutableExtension,
 } from '@backstage/core-plugin-api';
-import { DefaultCatalogPageProps } from './components/Marketplace/Marketplace';
+import { MarketplaceProps } from './components/Marketplace/Marketplace';
 import { rootRouteRef } from './routes';
 
+export { type MarketplaceProps as DefaultCatalogPageProps } from './components/Marketplace/Marketplace';
+
+/**
+ * Github Marketplace plugin
+ * @public
+ */
 export const marketplacePlugin = createPlugin({
   id: 'github-marketplace',
 });
 
-/** @public */
-export const Marketplace: (props: DefaultCatalogPageProps) => JSX.Element =
+/**
+ * GitHub Actions Marketplace Page
+ *
+ * @public
+ */
+export const Marketplace: (props: MarketplaceProps) => JSX.Element =
   marketplacePlugin.provide(
     createRoutableExtension({
       name: 'Marketplace',
@@ -21,7 +31,11 @@ export const Marketplace: (props: DefaultCatalogPageProps) => JSX.Element =
     }),
   );
 
-/** @public */
+/**
+ * Entity card that shows the installation steps for the GitHub Action
+ *
+ * @public
+ */
 export const EntityGitHubActionInstallationCard = marketplacePlugin.provide(
   createComponentExtension({
     name: 'EntityGitHubActionInstallationCard',
@@ -34,7 +48,11 @@ export const EntityGitHubActionInstallationCard = marketplacePlugin.provide(
   }),
 );
 
-/** @public */
+/**
+ * Entity card that shows a user how to use the GitHub Action
+ *
+ * @public
+ */
 export const EntityGitHubActionUsageCard = marketplacePlugin.provide(
   createComponentExtension({
     name: 'EntityGitHubActionUsageCard',
