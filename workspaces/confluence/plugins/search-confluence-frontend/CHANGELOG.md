@@ -1,5 +1,12 @@
 # @philips-software/backstage-plugin-search-confluence-frontend
 
+## 2.2.0
+
+### Minor Changes
+
+- 3a5a772: Update package config and documentation
+- 4fb2b0d: Added search result list item extension for ConfluenceResultListItem
+
 ## 2.1.0
 
 ### Minor Changes
