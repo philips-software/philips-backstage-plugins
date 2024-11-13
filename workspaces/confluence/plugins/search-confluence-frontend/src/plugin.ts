@@ -17,7 +17,8 @@ export const searchConfluenceFrontendPlugin = createPlugin({
 /**
  * A search result item extension for Confluence.
  *
- * @public */
+ * @public
+ */
 export const ConfluenceResultListItem: (
   props: SearchResultListItemExtensionProps<ConfluenceResultItemProps>,
 ) => JSX.Element | null = searchConfluenceFrontendPlugin.provide(
