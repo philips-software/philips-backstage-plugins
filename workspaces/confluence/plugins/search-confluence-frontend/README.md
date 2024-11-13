@@ -39,23 +39,7 @@ import {
 />
 
 <SearchResult>
-  {({ results }) => (
-    <List>
-      {results.map(({ type, document, highlight, rank }) => {
-        switch (type) {
-         // Add the following case to the switch statement above the default case
-          case 'confluence':
-            return (
-              <ConfluenceResultListItem
-                key={document.location}
-                result={document}
-                highlight={highlight}
-              />
-            );
-         // ...
-        }
-      })}
-    </List>
-  )}
+  // ...
+  <ConfluenceResultListItem />
 </SearchResult>
 ```

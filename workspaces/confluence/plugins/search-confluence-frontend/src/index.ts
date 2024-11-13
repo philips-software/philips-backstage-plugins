@@ -4,9 +4,9 @@
  * @packageDocumentation
  */
 
-export { searchConfluenceFrontendPlugin } from './plugin';
-export { ConfluenceSearchIcon } from './icons';
 export {
+  searchConfluenceFrontendPlugin,
   ConfluenceResultListItem,
-  type ConfluenceResultItemProps,
-} from './components/ConfluenceResultListItem';
+} from './plugin';
+export { ConfluenceSearchIcon } from './icons';
+export { type ConfluenceResultItemProps } from './components/ConfluenceResultListItem';
