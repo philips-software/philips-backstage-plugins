@@ -1,5 +1,12 @@
 # @philips-software/backstage-plugin-upptime-backend
 
+## 2.3.1
+
+### Patch Changes
+
+- 6f0ade9: Updated dependency `winston` to `^3.16.0`.
+- 9ad06eb: Updated dependency `winston` to `^3.17.0`.
+
 ## 2.3.0
 
 ### Minor Changes
