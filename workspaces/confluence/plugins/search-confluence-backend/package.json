@@ -15,7 +15,11 @@
     "directory": "workspaces/confluence/plugins/search-confluence-backend"
   },
   "backstage": {
-    "role": "backend-plugin"
+    "role": "backend-plugin",
+    "pluginId": "search-confluence",
+    "pluginPackages": [
+      "@philips-software/backstage-plugin-search-confluence-backend"
+    ]
   },
   "scripts": {
     "start": "backstage-cli package start",
