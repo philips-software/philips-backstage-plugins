@@ -17,7 +17,7 @@ Add the plugin to your frontend app:
 
 Add The Confluence Search Component to : `packages/app/src/components/search/SearchPage.tsx `
 
-```typescript
+```tsx
 // packages/app/src/components/search/SearchPage.tsx
 
 import {
@@ -39,7 +39,23 @@ import {
 />
 
 <SearchResult>
-  // ...
-  <ConfluenceResultListItem />
+  {({ results }) => (
+    <List>
+      {results.map(({ type, document, highlight, rank }) => {
+        switch (type) {
+         // Add the following case to the switch statement above the default case
+          case 'confluence':
+            return (
+              <ConfluenceResultListItem
+                key={document.location}
+                result={document}
+                highlight={highlight}
+              />
+            );
+         // ...
+        }
+      })}
+    </List>
+  )}
 </SearchResult>
 ```
