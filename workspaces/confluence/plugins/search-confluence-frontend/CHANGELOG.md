@@ -1,5 +1,11 @@
 # @philips-software/backstage-plugin-search-confluence-frontend
 
+## 2.2.1
+
+### Patch Changes
+
+- 1ea8359: Removed divider from ConfluenceResultListItem
+
 ## 2.2.0
 
 ### Minor Changes
