@@ -1,5 +1,11 @@
 # @philips-software/backstage-plugin-search-confluence-backend
 
+## 2.2.0
+
+### Minor Changes
+
+- 3a5a772: Update package config and documentation
+
 ## 2.1.0
 
 ### Minor Changes
