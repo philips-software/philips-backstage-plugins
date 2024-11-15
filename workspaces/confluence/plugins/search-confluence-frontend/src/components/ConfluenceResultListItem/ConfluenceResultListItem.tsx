@@ -9,7 +9,6 @@ import {
   Box,
   Breadcrumbs,
   Chip,
-  Divider,
   ListItem,
   ListItemIcon,
   ListItemText,
@@ -136,20 +135,16 @@ export const ConfluenceResultListItem = ({
   );
 
   return (
-    <>
-      <ListItem alignItems="center">
-        <ListItemIcon title="Confluence document">
-          <ConfluenceSearchIcon />
-        </ListItemIcon>
-        <ListItemText
-          primary={title}
-          secondary={excerpt}
-          className={classes.itemText}
-          primaryTypographyProps={{ variant: 'h6' }}
-        />
-      </ListItem>
-
-      <Divider component="li" />
-    </>
+    <ListItem alignItems="center">
+      <ListItemIcon title="Confluence document">
+        <ConfluenceSearchIcon />
+      </ListItemIcon>
+      <ListItemText
+        primary={title}
+        secondary={excerpt}
+        className={classes.itemText}
+        primaryTypographyProps={{ variant: 'h6' }}
+      />
+    </ListItem>
   );
 };
