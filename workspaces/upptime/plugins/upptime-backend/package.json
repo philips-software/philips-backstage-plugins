@@ -39,7 +39,7 @@
     "@backstage/errors": "backstage:^",
     "@backstage/plugin-catalog-backend": "backstage:^",
     "@types/express": "*",
-    "express": "^4.21.1",
+    "express": "^4.21.2",
     "express-promise-router": "^4.1.0",
     "node-fetch": "^3.3.1",
     "winston": "^3.17.0",
