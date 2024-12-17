@@ -1,5 +1,11 @@
 # @philips-software/backstage-plugin-upptime-frontend
 
+## 2.4.0
+
+### Minor Changes
+
+- 1b8228e: Update licnse in packge.josn
+
 ## 2.3.1
 
 ### Patch Changes
