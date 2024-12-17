@@ -1,5 +1,11 @@
 # @philips-software/backstage-plugin-upptime-backend
 
+## 2.3.2
+
+### Patch Changes
+
+- eac5adc: Updated dependency `express` to `^4.21.2`.
+
 ## 2.3.1
 
 ### Patch Changes
