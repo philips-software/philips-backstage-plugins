@@ -1,5 +1,16 @@
 # @philips-software/backstage-plugin-upptime-frontend
 
+## 2.4.0
+
+### Minor Changes
+
+- 1b8228e: Update licnse in packge.josn
+
+### Patch Changes
+
+- 35ab0e9: Updated dependency `cross-fetch` to `^4.1.0`.
+- 0d3a910: Updated dependency `react-use` to `^17.6.0`.
+
 ## 2.3.1
 
 ### Patch Changes
