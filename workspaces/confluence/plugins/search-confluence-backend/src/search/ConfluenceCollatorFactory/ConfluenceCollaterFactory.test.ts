@@ -270,6 +270,7 @@ describe('Testing ConfluenceCollatorFactory', () => {
       `Request failed with ${errorStatus} ${errorMessage}`,
     );
     jest.spyOn(retry, 'operation').mockReturnValue({
+      ...retry.operation(),
       attempt: fn => fn(1),
       retry: retryMock,
       mainError: () => error,
