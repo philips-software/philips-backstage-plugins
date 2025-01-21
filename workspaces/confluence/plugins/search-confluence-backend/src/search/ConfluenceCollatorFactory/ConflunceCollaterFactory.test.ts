@@ -2,6 +2,7 @@ import { ConfluenceCollatorFactory } from './ConfluenceCollatorFactory';
 import { ConfigReader } from '@backstage/config';
 import { getVoidLogger } from '@backstage/backend-common';
 import fetch from 'jest-fetch-mock';
+import retry from 'retry';
 
 const createConfig = new ConfigReader({
   confluence: {
@@ -262,16 +263,28 @@ describe('Testing ConfluenceCollatorFactory', () => {
   });
 
   it('should throw an error for a non-ok response', async () => {
+    const retryMock = jest.fn();
+    const errorStatus = 404;
+    const errorMessage = 'Not Found';
+    const error = new Error(
+      `Request failed with ${errorStatus} ${errorMessage}`,
+    );
+    jest.spyOn(retry, 'operation').mockReturnValue({
+      attempt: fn => fn(1),
+      retry: retryMock,
+      mainError: () => error,
+    });
+
     const confluenceCollatorFactory = ConfluenceCollatorFactory.fromConfig(
       createConfig,
       { logger },
     );
 
-    fetch.mockResponseOnce('Not Found', { status: 404 });
+    fetch.mockResponseOnce(errorMessage, { status: errorStatus });
 
     await expect(
       confluenceCollatorFactory.get('https://example.com'),
-    ).rejects.toThrow('Not Found');
+    ).rejects.toThrow(errorMessage);
   });
 
   it('should return Bearer token if token is present', () => {
