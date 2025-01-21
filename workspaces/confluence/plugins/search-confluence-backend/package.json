@@ -39,6 +39,7 @@
     "@backstage/plugin-search-backend-node": "backstage:^",
     "@backstage/plugin-search-common": "backstage:^",
     "p-limit": "^3.1.0",
+    "retry": "^0.13.1",
     "uuid": "^9.0.1",
     "winston": "^3.2.1"
   },
@@ -47,6 +48,7 @@
     "@backstage/plugin-auth-backend": "backstage:^",
     "@backstage/plugin-auth-backend-module-guest-provider": "backstage:^",
     "@backstage/types": "backstage:^",
+    "@types/retry": "^0.12.5",
     "@types/supertest": "^6.0.2",
     "@types/uuid": "^9.0.8",
     "jest-fetch-mock": "^3.0.3",

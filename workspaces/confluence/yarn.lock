@@ -6796,11 +6796,13 @@ __metadata:
     "@backstage/plugin-search-backend-node": "backstage:^"
     "@backstage/plugin-search-common": "backstage:^"
     "@backstage/types": "backstage:^"
+    "@types/retry": "npm:^0.12.5"
     "@types/supertest": "npm:^6.0.2"
     "@types/uuid": "npm:^9.0.8"
     jest-fetch-mock: "npm:^3.0.3"
     msw: "npm:^1.0.0"
     p-limit: "npm:^3.1.0"
+    retry: "npm:^0.13.1"
     uuid: "npm:^9.0.1"
     winston: "npm:^3.2.1"
   languageName: unknown
@@ -9270,6 +9272,13 @@ __metadata:
   version: 0.12.2
   resolution: "@types/retry@npm:0.12.2"
   checksum: 10/e5675035717b39ce4f42f339657cae9637cf0c0051cf54314a6a2c44d38d91f6544be9ddc0280587789b6afd056be5d99dbe3e9f4df68c286c36321579b1bf4a
+  languageName: node
+  linkType: hard
+
+"@types/retry@npm:^0.12.5":
+  version: 0.12.5
+  resolution: "@types/retry@npm:0.12.5"
+  checksum: 10/3fb6bf91835ca0eb2987567d6977585235a7567f8aeb38b34a8bb7bbee57ac050ed6f04b9998cda29701b8c893f5dfe315869bc54ac17e536c9235637fe351a2
   languageName: node
   linkType: hard
 

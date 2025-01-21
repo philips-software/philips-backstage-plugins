@@ -14,6 +14,7 @@ import {
   ConfluenceInstanceConfig,
 } from './types';
 import { v4 as uuidv4 } from 'uuid';
+import retry from 'retry';
 
 type ConfluenceCollatorOptions = {
   logger: Logger;
@@ -282,24 +283,41 @@ export class ConfluenceCollatorFactory implements DocumentCollatorFactory {
 
   async get<T = any>(requestUrl: string): Promise<T> {
     const Authorization = this.getAuthorizationHeader();
-    const res = await fetch(requestUrl, {
-      method: 'get',
-      headers: {
-        Authorization,
-      },
+
+    return new Promise<T>((resolve, reject) => {
+      const operationRetry = retry.operation({
+        minTimeout: 5000,
+      });
+
+      operationRetry.attempt(async attempt => {
+        try {
+          const res = await fetch(requestUrl, {
+            method: 'get',
+            headers: {
+              Authorization,
+            },
+          });
+
+          if (!res.ok) {
+            this.logger.warn(
+              `non-ok response from confluence (attempt ${attempt})`,
+              requestUrl,
+              res.status,
+              await res.text(),
+            );
+
+            throw new Error(
+              `Request failed with ${res.status} ${res.statusText}`,
+            );
+          }
+
+          resolve(await res.json());
+        } catch (e) {
+          if (operationRetry.retry(e)) return;
+
+          reject(operationRetry.mainError());
+        }
+      });
     });
-
-    if (!res.ok) {
-      this.logger.warn(
-        'non-ok response from confluence',
-        requestUrl,
-        res.status,
-        await res.text(),
-      );
-
-      throw new Error(`Request failed with ${res.status} ${res.statusText}`);
-    }
-
-    return await res.json();
   }
 }
