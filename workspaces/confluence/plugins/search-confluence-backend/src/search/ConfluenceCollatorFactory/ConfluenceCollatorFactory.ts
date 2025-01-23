@@ -12,6 +12,7 @@ import {
   IndexableAncestorRef,
   IndexableConfluenceDocument,
   ConfluenceInstanceConfig,
+  ConfluenceRetryConfig,
 } from './types';
 import { v4 as uuidv4 } from 'uuid';
 import retry from 'retry';
@@ -29,6 +30,7 @@ type ConfluenceCollatorOptions = {
     token?: string;
   };
   category: string[];
+  retry?: ConfluenceRetryConfig;
 };
 
 export const confluenceDefaultSchedule = {
@@ -51,6 +53,7 @@ export class ConfluenceCollatorFactory implements DocumentCollatorFactory {
   private parallelismLimit: number;
   private wikiUrl: string;
   private auth: { username?: string; password?: string; token?: string };
+  private retry?: ConfluenceRetryConfig;
   public category: string[];
   static fromConfig(
     config: Config,
@@ -75,6 +78,7 @@ export class ConfluenceCollatorFactory implements DocumentCollatorFactory {
       wikiUrl: confluenceOptions.wikiUrl,
       auth: auth,
       category: confluenceOptions.category,
+      retry: confluenceOptions.retry,
     });
   }
 
@@ -85,6 +89,7 @@ export class ConfluenceCollatorFactory implements DocumentCollatorFactory {
     this.wikiUrl = options.wikiUrl;
     this.auth = options.auth;
     this.category = options.category;
+    this.retry = options.retry;
   }
 
   async getCollator() {
@@ -287,7 +292,8 @@ export class ConfluenceCollatorFactory implements DocumentCollatorFactory {
 
     return new Promise<T>((resolve, reject) => {
       const operationRetry = retry.operation({
-        minTimeout: 5000,
+        retries: this.retry?.attempts ?? 3,
+        minTimeout: this.retry?.delay ?? 5000,
       });
 
       operationRetry.attempt(async attempt => {
