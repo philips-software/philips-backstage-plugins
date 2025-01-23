@@ -30,7 +30,7 @@ type ConfluenceCollatorOptions = {
     token?: string;
   };
   category: string[];
-  retry?: ConfluenceRetryConfig;
+  retries?: ConfluenceRetryConfig;
 };
 
 export const confluenceDefaultSchedule = {
@@ -53,7 +53,7 @@ export class ConfluenceCollatorFactory implements DocumentCollatorFactory {
   private parallelismLimit: number;
   private wikiUrl: string;
   private auth: { username?: string; password?: string; token?: string };
-  private retry?: ConfluenceRetryConfig;
+  private retries?: ConfluenceRetryConfig;
   public category: string[];
   static fromConfig(
     config: Config,
@@ -78,7 +78,7 @@ export class ConfluenceCollatorFactory implements DocumentCollatorFactory {
       wikiUrl: confluenceOptions.wikiUrl,
       auth: auth,
       category: confluenceOptions.category,
-      retry: confluenceOptions.retry,
+      retries: confluenceOptions.retries,
     });
   }
 
@@ -89,7 +89,7 @@ export class ConfluenceCollatorFactory implements DocumentCollatorFactory {
     this.wikiUrl = options.wikiUrl;
     this.auth = options.auth;
     this.category = options.category;
-    this.retry = options.retry;
+    this.retries = options.retries;
   }
 
   async getCollator() {
@@ -292,8 +292,8 @@ export class ConfluenceCollatorFactory implements DocumentCollatorFactory {
 
     return new Promise<T>((resolve, reject) => {
       const operationRetry = retry.operation({
-        retries: this.retry?.attempts ?? 3,
-        minTimeout: this.retry?.delay ?? 5000,
+        retries: this.retries?.attempts ?? 3,
+        minTimeout: this.retries?.delay ?? 5000,
       });
 
       operationRetry.attempt(async attempt => {

@@ -50,7 +50,7 @@ export interface Config {
     /**
      * @visibility backend
      */
-    retry?: {
+    retries?: {
       /**
        * Number of attempts to retry.
        * Defaults to 3.

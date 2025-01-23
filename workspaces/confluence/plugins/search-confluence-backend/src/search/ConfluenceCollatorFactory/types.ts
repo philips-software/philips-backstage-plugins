@@ -4,7 +4,7 @@ export type ConfluenceInstanceConfig = {
   wikiUrl: string;
   auth: { username?: string; password?: string; token?: string };
   category: string[];
-  retry?: ConfluenceRetryConfig;
+  retries?: ConfluenceRetryConfig;
 };
 
 export type ConfluenceRetryConfig = {

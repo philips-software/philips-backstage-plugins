@@ -33,7 +33,7 @@ confluence:
     # example
     # - space1
     # - space2
-  retry:
+  retries:
     attempts: 3 # optional, defaults to 3
     delay: 5000 # optional, defaults to 5000
 ```
