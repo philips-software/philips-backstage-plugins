@@ -36,6 +36,7 @@
     "@backstage/backend-plugin-api": "backstage:^",
     "@backstage/backend-tasks": "^0.6.1",
     "@backstage/config": "backstage:^",
+    "@backstage/errors": "backstage:^",
     "@backstage/plugin-search-backend-node": "backstage:^",
     "@backstage/plugin-search-common": "backstage:^",
     "p-limit": "^3.1.0",

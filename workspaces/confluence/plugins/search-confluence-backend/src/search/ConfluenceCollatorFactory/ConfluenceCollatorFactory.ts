@@ -15,6 +15,7 @@ import {
 } from './types';
 import { v4 as uuidv4 } from 'uuid';
 import retry from 'retry';
+import { ResponseError } from '@backstage/errors';
 
 type ConfluenceCollatorOptions = {
   logger: Logger;
@@ -306,16 +307,19 @@ export class ConfluenceCollatorFactory implements DocumentCollatorFactory {
               await res.text(),
             );
 
-            throw new Error(
-              `Request failed with ${res.status} ${res.statusText}`,
-            );
+            throw await ResponseError.fromResponse(res);
           }
 
           resolve(await res.json());
         } catch (e) {
-          if (operationRetry.retry(e)) return;
+          if (
+            e instanceof ResponseError &&
+            e.statusCode === 429 &&
+            operationRetry.retry(e)
+          )
+            return;
 
-          reject(operationRetry.mainError());
+          reject(e);
         }
       });
     });
