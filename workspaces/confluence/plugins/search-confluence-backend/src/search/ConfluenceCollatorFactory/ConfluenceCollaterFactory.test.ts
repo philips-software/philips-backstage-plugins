@@ -263,17 +263,24 @@ describe('Testing ConfluenceCollatorFactory', () => {
   });
 
   it('should throw an error for a non-ok response', async () => {
-    const retryMock = jest.fn();
-    const errorStatus = 404;
-    const errorMessage = 'Not Found';
-    const error = new Error(
-      `Request failed with ${errorStatus} ${errorMessage}`,
+    const confluenceCollatorFactory = ConfluenceCollatorFactory.fromConfig(
+      createConfig,
+      { logger },
     );
+
+    fetch.mockResponseOnce('Not Found', { status: 404 });
+
+    await expect(
+      confluenceCollatorFactory.get('https://example.com'),
+    ).rejects.toThrow('Not Found');
+  });
+
+  it('should retry for a rate limit error response', async () => {
+    const retryMock = jest.fn();
     jest.spyOn(retry, 'operation').mockReturnValue({
       ...retry.operation(),
       attempt: fn => fn(1),
       retry: retryMock,
-      mainError: () => error,
     });
 
     const confluenceCollatorFactory = ConfluenceCollatorFactory.fromConfig(
@@ -281,11 +288,13 @@ describe('Testing ConfluenceCollatorFactory', () => {
       { logger },
     );
 
-    fetch.mockResponseOnce(errorMessage, { status: errorStatus });
+    fetch.mockResponseOnce('Too Many Requests', { status: 429 });
 
     await expect(
       confluenceCollatorFactory.get('https://example.com'),
-    ).rejects.toThrow(errorMessage);
+    ).rejects.toThrow('Too Many Requests');
+
+    expect(retryMock).toHaveBeenCalled();
   });
 
   it('should return Bearer token if token is present', () => {
