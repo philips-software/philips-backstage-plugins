@@ -1,5 +1,11 @@
 # @philips-software/backstage-plugin-search-confluence-backend
 
+## 2.4.0
+
+### Minor Changes
+
+- 7164cee: Bump to backstage 1.35.0 dependencies
+
 ## 2.3.0
 
 ### Minor Changes
