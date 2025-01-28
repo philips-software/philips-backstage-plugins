@@ -52,7 +52,7 @@
     "@backstage/core-app-api": "backstage:^",
     "@backstage/dev-utils": "backstage:^",
     "@backstage/test-utils": "backstage:^",
-    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^15.0.2",
     "@types/react": "^18",
     "@types/react-dom": "^18",
