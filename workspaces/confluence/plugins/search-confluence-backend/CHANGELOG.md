@@ -1,5 +1,11 @@
 # @philips-software/backstage-plugin-search-confluence-backend
 
+## 2.4.1
+
+### Patch Changes
+
+- c8dd07d: Updated dependency `winston` to `^3.17.0`.
+
 ## 2.4.0
 
 ### Minor Changes
