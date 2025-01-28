@@ -42,7 +42,7 @@
     "p-limit": "^3.1.0",
     "retry": "^0.13.1",
     "uuid": "^9.0.1",
-    "winston": "^3.2.1"
+    "winston": "^3.17.0"
   },
   "devDependencies": {
     "@backstage/cli": "backstage:^",
