@@ -46,5 +46,24 @@ export interface Config {
      * @visibility backend
      */
     category: string[];
+
+    /**
+     * @visibility backend
+     */
+    retries?: {
+      /**
+       * Number of attempts to retry.
+       * Defaults to 3.
+       * @visibility backend
+       */
+      attempts?: string;
+
+      /**
+       * Minimum delay between retries in milliseconds.
+       * Defaults to 5000.
+       * @visibility backend
+       */
+      delay?: string;
+    };
   };
 }

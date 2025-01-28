@@ -12,8 +12,11 @@ import {
   IndexableAncestorRef,
   IndexableConfluenceDocument,
   ConfluenceInstanceConfig,
+  ConfluenceRetryConfig,
 } from './types';
 import { v4 as uuidv4 } from 'uuid';
+import retry from 'retry';
+import { ResponseError } from '@backstage/errors';
 
 type ConfluenceCollatorOptions = {
   logger: Logger;
@@ -27,6 +30,7 @@ type ConfluenceCollatorOptions = {
     token?: string;
   };
   category: string[];
+  retries?: ConfluenceRetryConfig;
 };
 
 export const confluenceDefaultSchedule = {
@@ -49,6 +53,7 @@ export class ConfluenceCollatorFactory implements DocumentCollatorFactory {
   private parallelismLimit: number;
   private wikiUrl: string;
   private auth: { username?: string; password?: string; token?: string };
+  private retries?: ConfluenceRetryConfig;
   public category: string[];
   static fromConfig(
     config: Config,
@@ -73,6 +78,7 @@ export class ConfluenceCollatorFactory implements DocumentCollatorFactory {
       wikiUrl: confluenceOptions.wikiUrl,
       auth: auth,
       category: confluenceOptions.category,
+      retries: confluenceOptions.retries,
     });
   }
 
@@ -83,6 +89,7 @@ export class ConfluenceCollatorFactory implements DocumentCollatorFactory {
     this.wikiUrl = options.wikiUrl;
     this.auth = options.auth;
     this.category = options.category;
+    this.retries = options.retries;
   }
 
   async getCollator() {
@@ -282,24 +289,45 @@ export class ConfluenceCollatorFactory implements DocumentCollatorFactory {
 
   async get<T = any>(requestUrl: string): Promise<T> {
     const Authorization = this.getAuthorizationHeader();
-    const res = await fetch(requestUrl, {
-      method: 'get',
-      headers: {
-        Authorization,
-      },
+
+    return new Promise<T>((resolve, reject) => {
+      const operationRetry = retry.operation({
+        retries: this.retries?.attempts ?? 3,
+        minTimeout: this.retries?.delay ?? 5000,
+      });
+
+      operationRetry.attempt(async attempt => {
+        try {
+          const res = await fetch(requestUrl, {
+            method: 'get',
+            headers: {
+              Authorization,
+            },
+          });
+
+          if (!res.ok) {
+            this.logger.warn(
+              `non-ok response from confluence (attempt ${attempt})`,
+              requestUrl,
+              res.status,
+              await res.text(),
+            );
+
+            throw await ResponseError.fromResponse(res);
+          }
+
+          resolve(await res.json());
+        } catch (e) {
+          if (
+            e instanceof ResponseError &&
+            e.statusCode === 429 &&
+            operationRetry.retry(e)
+          )
+            return;
+
+          reject(e);
+        }
+      });
     });
-
-    if (!res.ok) {
-      this.logger.warn(
-        'non-ok response from confluence',
-        requestUrl,
-        res.status,
-        await res.text(),
-      );
-
-      throw new Error(`Request failed with ${res.status} ${res.statusText}`);
-    }
-
-    return await res.json();
   }
 }

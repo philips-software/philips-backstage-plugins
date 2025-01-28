@@ -29,11 +29,16 @@ confluence:
   auth:
     token: ${Your PAT Token}
   category:
-# provide the list of categories you want to use to find spaces that will be indexed
-# example
-# - space1
-# - space2
+    # provide the list of categories you want to use to find spaces that will be indexed
+    # example
+    # - space1
+    # - space2
+  retries:
+    attempts: 3 # optional, defaults to 3
+    delay: 5000 # optional, defaults to 5000
 ```
+
+> Note: if the Confluence API rate limit is exceeded, the plugin will automatically retry with increasing wait times for a specified number of retry attempts. This can increase the duration of the task. Take this into account when setting the `schedule.frequency` and `schedule.timeout` values.
 
 ## Backend Configuration (Follows new backend)
 

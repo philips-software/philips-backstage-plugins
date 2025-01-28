@@ -2,6 +2,7 @@ import { ConfluenceCollatorFactory } from './ConfluenceCollatorFactory';
 import { ConfigReader } from '@backstage/config';
 import { getVoidLogger } from '@backstage/backend-common';
 import fetch from 'jest-fetch-mock';
+import retry from 'retry';
 
 const createConfig = new ConfigReader({
   confluence: {
@@ -272,6 +273,28 @@ describe('Testing ConfluenceCollatorFactory', () => {
     await expect(
       confluenceCollatorFactory.get('https://example.com'),
     ).rejects.toThrow('Not Found');
+  });
+
+  it('should retry for a rate limit error response', async () => {
+    const retryMock = jest.fn();
+    jest.spyOn(retry, 'operation').mockReturnValue({
+      ...retry.operation(),
+      attempt: fn => fn(1),
+      retry: retryMock,
+    });
+
+    const confluenceCollatorFactory = ConfluenceCollatorFactory.fromConfig(
+      createConfig,
+      { logger },
+    );
+
+    fetch.mockResponseOnce('Too Many Requests', { status: 429 });
+
+    await expect(
+      confluenceCollatorFactory.get('https://example.com'),
+    ).rejects.toThrow('Too Many Requests');
+
+    expect(retryMock).toHaveBeenCalled();
   });
 
   it('should return Bearer token if token is present', () => {
