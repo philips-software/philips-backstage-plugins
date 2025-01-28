@@ -1,5 +1,11 @@
 # @philips-software/backstage-plugin-search-confluence-backend
 
+## 2.3.0
+
+### Minor Changes
+
+- 8523423: Added API retries with exponential backoff
+
 ## 2.2.0
 
 ### Minor Changes
