@@ -14,3 +14,13 @@ updates:
     directory: /workspaces/upptime
     schedule:
       interval: weekly
+
+  - package-ecosystem: npm
+    directory: /workspaces/confluence
+    schedule:
+      interval: weekly
+
+  - package-ecosystem: npm
+    directory: /workspaces/github-marketplace
+    schedule:
+      interval: weekly
