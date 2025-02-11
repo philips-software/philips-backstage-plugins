@@ -4919,7 +4919,7 @@ __metadata:
     "@backstage/repo-tools": "backstage:^"
     "@changesets/cli": "npm:^2.27.12"
     "@spotify/prettier-config": "npm:^15.0.0"
-    node-gyp: "npm:^11.0.0"
+    node-gyp: "npm:^11.1.0"
     prettier: "npm:^3.5.0"
     typescript: "npm:~5.7.3"
   languageName: unknown
@@ -19929,9 +19929,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-gyp@npm:^11.0.0":
-  version: 11.0.0
-  resolution: "node-gyp@npm:11.0.0"
+"node-gyp@npm:^11.1.0":
+  version: 11.1.0
+  resolution: "node-gyp@npm:11.1.0"
   dependencies:
     env-paths: "npm:^2.2.0"
     exponential-backoff: "npm:^3.1.1"
@@ -19945,7 +19945,7 @@ __metadata:
     which: "npm:^5.0.0"
   bin:
     node-gyp: bin/node-gyp.js
-  checksum: 10/5d07430e887a906f85c7c6ed87e8facb7ecd4ce42d948a2438c471df2e24ae6af70f4def114ec1a03127988d164648dda8d75fe666f3c4b431e53856379fdf13
+  checksum: 10/3314ebfeb99dbcdf9e8c810df1ee52294045399873d4ab1e6740608c4fbe63adaf6580c0610b23c6eda125e298536553f5bb6fb0df714016a5c721ed31095e42
   languageName: node
   linkType: hard
 
