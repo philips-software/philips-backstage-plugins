@@ -1,5 +1,12 @@
 # @philips-software/backstage-plugin-search-confluence-backend
 
+## 2.4.2
+
+### Patch Changes
+
+- 051a2f5: Updated dependency `p-limit` to `^6.2.0`.
+- 491aaca: Updated dependency `msw` to `^2.7.0`.
+
 ## 2.4.1
 
 ### Patch Changes
