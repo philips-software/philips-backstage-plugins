@@ -39,7 +39,7 @@
     "@backstage/errors": "backstage:^",
     "@backstage/plugin-search-backend-node": "backstage:^",
     "@backstage/plugin-search-common": "backstage:^",
-    "p-limit": "^3.1.0",
+    "p-limit": "^6.2.0",
     "retry": "^0.13.1",
     "uuid": "^9.0.1",
     "winston": "^3.17.0"
