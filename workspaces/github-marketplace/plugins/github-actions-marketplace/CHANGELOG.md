@@ -1,5 +1,11 @@
 # @philips-software/backstage-plugin-github-actions-marketplace
 
+## 1.0.1
+
+### Patch Changes
+
+- cd702f3: Updated dependency `@testing-library/user-event` to `^14.6.1`.
+
 ## 1.0.0
 
 ### Major Changes
