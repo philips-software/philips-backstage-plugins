@@ -1,5 +1,13 @@
 # @philips-software/backstage-plugin-search-confluence-frontend
 
+## 2.3.2
+
+### Patch Changes
+
+- 2a9a0b0: Updated dependency `react-use` to `^17.6.0`.
+- a9a81fb: Updated dependency `msw` to `^2.7.3`.
+- 491aaca: Updated dependency `msw` to `^2.7.0`.
+
 ## 2.3.1
 
 ### Patch Changes
