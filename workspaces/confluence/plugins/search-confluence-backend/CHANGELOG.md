@@ -1,5 +1,11 @@
 # @philips-software/backstage-plugin-search-confluence-backend
 
+## 2.4.3
+
+### Patch Changes
+
+- 14dca17: Updated dependency `uuid` to `^11.1.0`.
+
 ## 2.4.2
 
 ### Patch Changes
