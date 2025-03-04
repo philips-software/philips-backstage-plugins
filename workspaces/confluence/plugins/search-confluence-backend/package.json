@@ -41,7 +41,7 @@
     "@backstage/plugin-search-common": "backstage:^",
     "p-limit": "^6.2.0",
     "retry": "^0.13.1",
-    "uuid": "^9.0.1",
+    "uuid": "^11.1.0",
     "winston": "^3.17.0"
   },
   "devDependencies": {
