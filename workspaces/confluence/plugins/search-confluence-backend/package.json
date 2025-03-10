@@ -51,7 +51,7 @@
     "@backstage/types": "backstage:^",
     "@types/retry": "^0.12.5",
     "@types/supertest": "^6.0.2",
-    "@types/uuid": "^9.0.8",
+    "@types/uuid": "^10.0.0",
     "jest-fetch-mock": "^3.0.3",
     "msw": "^2.7.3"
   },
