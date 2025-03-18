@@ -1,5 +1,11 @@
 # @philips-software/backstage-plugin-search-confluence-backend
 
+## 2.4.4
+
+### Patch Changes
+
+- ba2737c: Updated dependency `@types/uuid` to `^10.0.0`.
+
 ## 2.4.3
 
 ### Patch Changes
