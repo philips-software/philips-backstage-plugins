@@ -1,5 +1,15 @@
 # @philips-software/backstage-plugin-upptime-backend
 
+## 2.6.0
+
+### Minor Changes
+
+- 2e8d689: Update to backstage 1.37.0
+
+### Patch Changes
+
+- 340b98a: Updated dependency `supertest` to `^7.1.0`.
+
 ## 2.5.0
 
 ### Minor Changes
