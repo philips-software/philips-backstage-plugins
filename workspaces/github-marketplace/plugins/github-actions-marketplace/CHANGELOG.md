@@ -1,5 +1,11 @@
 # @philips-software/backstage-plugin-github-actions-marketplace
 
+## 1.1.0
+
+### Minor Changes
+
+- d6a4dcd: Bump to backstage 1.37.0
+
 ## 1.0.1
 
 ### Patch Changes
