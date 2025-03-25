@@ -32,9 +32,9 @@
     "directory": "workspaces/github-marketplace"
   },
   "devDependencies": {
-    "@backstage/cli": "^0.30.0",
-    "@backstage/e2e-test-utils": "^0.1.1",
-    "@backstage/repo-tools": "^0.13.1",
+    "@backstage/cli": "backstage:^",
+    "@backstage/e2e-test-utils": "backstage:^",
+    "@backstage/repo-tools": "backstage:^",
     "@changesets/cli": "^2.28.1",
     "@spotify/prettier-config": "^15.0.0",
     "node-gyp": "^11.1.0",
@@ -57,5 +57,6 @@
     "*.{json,md}": [
       "prettier --write"
     ]
-  }
+  },
+  "packageManager": "yarn@4.7.0"
 }
