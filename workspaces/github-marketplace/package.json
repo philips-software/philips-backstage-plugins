@@ -34,7 +34,7 @@
   "devDependencies": {
     "@backstage/cli": "^0.30.0",
     "@backstage/e2e-test-utils": "^0.1.1",
-    "@backstage/repo-tools": "^0.13.0",
+    "@backstage/repo-tools": "^0.13.1",
     "@changesets/cli": "^2.28.1",
     "@spotify/prettier-config": "^15.0.0",
     "node-gyp": "^11.1.0",
