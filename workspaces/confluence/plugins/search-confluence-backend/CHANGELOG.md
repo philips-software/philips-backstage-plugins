@@ -1,5 +1,15 @@
 # @philips-software/backstage-plugin-search-confluence-backend
 
+## 2.5.0
+
+### Minor Changes
+
+- 378e258: Bumped to backstage 1.37.0 dependencies
+
+### Patch Changes
+
+- 082d7a5: Updated dependency `@types/supertest` to `^6.0.3`.
+
 ## 2.4.4
 
 ### Patch Changes

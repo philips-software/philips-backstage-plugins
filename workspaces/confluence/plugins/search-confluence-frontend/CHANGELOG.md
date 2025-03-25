@@ -1,5 +1,11 @@
 # @philips-software/backstage-plugin-search-confluence-frontend
 
+## 2.4.0
+
+### Minor Changes
+
+- 378e258: Bumped to backstage 1.37.0 dependencies
+
 ## 2.3.2
 
 ### Patch Changes
