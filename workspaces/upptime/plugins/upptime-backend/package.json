@@ -48,7 +48,7 @@
   "devDependencies": {
     "@backstage/backend-test-utils": "backstage:^",
     "@backstage/cli": "backstage:^",
-    "@types/supertest": "^6.0.2",
+    "@types/supertest": "^6.0.3",
     "supertest": "^7.1.0"
   },
   "files": [
