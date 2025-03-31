@@ -7062,12 +7062,12 @@ __metadata:
     "@material-ui/lab": "npm:^4.0.0-alpha.61"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^15.0.2"
-    "@types/react": "npm:^18"
+    "@types/react": "npm:^19"
     "@types/react-dom": "npm:^18"
     jest: "npm:^29.7.0"
     jest-canvas-mock: "npm:^2.5.2"
     msw: "npm:^2.7.3"
-    react: "npm:^18.3.1"
+    react: "npm:^19.1.0"
     react-dom: "npm:^18.3.1"
     react-router-dom: "npm:^6.23.1"
     react-use: "npm:^17.6.0"
@@ -22782,12 +22782,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^18.3.1":
-  version: 18.3.1
-  resolution: "react@npm:18.3.1"
-  dependencies:
-    loose-envify: "npm:^1.1.0"
-  checksum: 10/261137d3f3993eaa2368a83110466fc0e558bc2c7f7ae7ca52d94f03aac945f45146bd85e5f481044db1758a1dbb57879e2fcdd33924e2dde1bdc550ce73f7bf
+"react@npm:^19.1.0":
+  version: 19.1.0
+  resolution: "react@npm:19.1.0"
+  checksum: 10/d0180689826fd9de87e839c365f6f361c561daea397d61d724687cae88f432a307d1c0f53a0ee95ddbe3352c10dac41d7ff1ad85530fb24951b27a39e5398db4
   languageName: node
   linkType: hard
 
