@@ -1,5 +1,12 @@
 # @philips-software/backstage-plugin-upptime-backend
 
+## 2.6.1
+
+### Patch Changes
+
+- cd42360: Updated dependency `@types/supertest` to `^6.0.3`.
+- 9444088: Updated dependency `express` to `^5.1.0`.
+
 ## 2.6.0
 
 ### Minor Changes
