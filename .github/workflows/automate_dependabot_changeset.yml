@@ -15,7 +15,7 @@ jobs:
         with:
           egress-policy: audit
 
-      - uses: actions/create-github-app-token@v1
+      - uses: actions/create-github-app-token@v2
         id: app-token
         with:
           app-id: ${{ secrets.BACKSTAGE_BOT_APPLICATION_ID }}
