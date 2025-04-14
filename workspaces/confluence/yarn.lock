@@ -4278,9 +4278,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@changesets/cli@npm:^2.28.1":
-  version: 2.28.1
-  resolution: "@changesets/cli@npm:2.28.1"
+"@changesets/cli@npm:^2.29.0":
+  version: 2.29.0
+  resolution: "@changesets/cli@npm:2.29.0"
   dependencies:
     "@changesets/apply-release-plan": "npm:^7.0.10"
     "@changesets/assemble-release-plan": "npm:^6.0.6"
@@ -4312,7 +4312,7 @@ __metadata:
     term-size: "npm:^2.1.0"
   bin:
     changeset: bin.js
-  checksum: 10/c2cb4063bfd02147970bd629565d05d7e13b9649446997ea5c17e250ef290a1b093f2a2cfaf1e6856597aa435499758f9d6d98bfb24035533376a9d2cc7f37f2
+  checksum: 10/f5be026fc77c68b956c9890f08084d1c74910450af45368c562975cd9f6b0fc15df8a3f487277b77bfa6b6889ad011b478cf7e6c926b32ec45129f1a36a86b21
   languageName: node
   linkType: hard
 
@@ -5289,7 +5289,7 @@ __metadata:
     "@backstage/plugin-auth-backend": "backstage:^"
     "@backstage/plugin-auth-backend-module-guest-provider": "backstage:^"
     "@backstage/repo-tools": "backstage:^"
-    "@changesets/cli": "npm:^2.28.1"
+    "@changesets/cli": "npm:^2.29.0"
     "@spotify/prettier-config": "npm:^15.0.0"
     node-gyp: "npm:^11.1.0"
     prettier: "npm:^3.5.3"
