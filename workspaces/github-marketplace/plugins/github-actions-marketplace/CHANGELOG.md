@@ -1,5 +1,11 @@
 # @philips-software/backstage-plugin-github-actions-marketplace
 
+## 1.1.1
+
+### Patch Changes
+
+- 9c0a863: Updated dependency `@testing-library/react` to `^16.3.0`.
+
 ## 1.1.0
 
 ### Minor Changes
