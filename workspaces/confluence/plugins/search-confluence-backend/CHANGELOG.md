@@ -1,5 +1,11 @@
 # @philips-software/backstage-plugin-search-confluence-backend
 
+## 2.5.1
+
+### Patch Changes
+
+- 2200595: Updated dependency `msw` to `^2.8.2`.
+
 ## 2.5.0
 
 ### Minor Changes
