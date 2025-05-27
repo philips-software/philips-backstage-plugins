@@ -1,5 +1,11 @@
 # @philips-software/backstage-plugin-upptime-backend
 
+## 2.6.2
+
+### Patch Changes
+
+- a62cfe8: Updated dependency `supertest` to `^7.1.1`.
+
 ## 2.6.1
 
 ### Patch Changes
