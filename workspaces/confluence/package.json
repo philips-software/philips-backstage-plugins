@@ -37,7 +37,7 @@
     "@backstage/plugin-auth-backend": "backstage:^",
     "@backstage/plugin-auth-backend-module-guest-provider": "backstage:^",
     "@backstage/repo-tools": "backstage:^",
-    "@changesets/cli": "^2.29.4",
+    "@changesets/cli": "^2.29.5",
     "@spotify/prettier-config": "^15.0.0",
     "node-gyp": "^11.2.0",
     "prettier": "^3.5.3",
