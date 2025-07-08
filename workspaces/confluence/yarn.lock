@@ -7339,7 +7339,7 @@ __metadata:
     "@types/supertest": "npm:^6.0.3"
     "@types/uuid": "npm:^10.0.0"
     jest-fetch-mock: "npm:^3.0.3"
-    msw: "npm:^2.10.2"
+    msw: "npm:^2.10.3"
     p-limit: "npm:^6.2.0"
     retry: "npm:^0.13.1"
     uuid: "npm:^11.1.0"
@@ -7369,7 +7369,7 @@ __metadata:
     "@types/react-dom": "npm:^18"
     jest: "npm:^30.0.2"
     jest-canvas-mock: "npm:^2.5.2"
-    msw: "npm:^2.10.2"
+    msw: "npm:^2.10.3"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-router-dom: "npm:^6.23.1"
@@ -20973,9 +20973,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"msw@npm:^2.10.2":
-  version: 2.10.2
-  resolution: "msw@npm:2.10.2"
+"msw@npm:^2.10.3":
+  version: 2.10.3
+  resolution: "msw@npm:2.10.3"
   dependencies:
     "@bundled-es-modules/cookie": "npm:^2.0.1"
     "@bundled-es-modules/statuses": "npm:^1.0.1"
@@ -21002,7 +21002,7 @@ __metadata:
       optional: true
   bin:
     msw: cli/index.js
-  checksum: 10/bc90bc34a0b9e978e662f33fa630a0de66c4b6eff3a92b41efa08bf67d79b43e4a961a17b0d274580393c912f4ac6226c76a8bc33148799b1ee43477df712c26
+  checksum: 10/ac51d6232d3b0a9b711195a2c3f22035683f9082ee83d915e33f35dbf3a91c4381dab70f9de5358113adaad8ecbe1c58a584377f4ba988e2903fa9770a294b42
   languageName: node
   linkType: hard
 
