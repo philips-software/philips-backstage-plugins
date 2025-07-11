@@ -1,5 +1,13 @@
 # @philips-software/backstage-plugin-search-confluence-frontend
 
+## 2.4.3
+
+### Patch Changes
+
+- ab1184e: Updated dependency `jest` to `^30.0.4`.
+- df78637: Updated dependency `jest` to `^30.0.2`.
+- 3303ec8: Updated dependency `msw` to `^2.10.3`.
+
 ## 2.4.2
 
 ### Patch Changes
