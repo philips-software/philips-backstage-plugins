@@ -50,7 +50,7 @@ jobs:
         with:
           node-version: 22
           registry-url: https://registry.npmjs.org/ # Needed for auth
- 
+
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
@@ -115,7 +115,7 @@ jobs:
         with:
           node-version: 22
           registry-url: https://registry.npmjs.org/ # Needed for auth
-           
+
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
