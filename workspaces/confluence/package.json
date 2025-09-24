@@ -45,7 +45,8 @@
   },
   "resolutions": {
     "@types/react": "^18",
-    "@types/react-dom": "^18"
+    "@types/react-dom": "^18",
+    "form-data": "^4.0.0"
   },
   "prettier": "@spotify/prettier-config",
   "lint-staged": {
