@@ -1,5 +1,3 @@
-import React from 'react';
-
 /**
  * Confluence Search Icon
  * @public
