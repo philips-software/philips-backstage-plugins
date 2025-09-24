@@ -11,7 +11,8 @@ concurrency:
 
 permissions:
   contents: read
-
+  pull-requests: write
+  
 jobs:
   find-changed-workspaces:
     name: Detect workspace changes
@@ -28,10 +29,11 @@ jobs:
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v4
 
       - name: Set up Node
-        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v4
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
-          node-version: 20
+          node-version: 22
           registry-url: https://registry.npmjs.org/ # Needed for auth
+          package-manager-cache: false
 
       - name: Fetch previous commit for check
         run: git fetch origin '${{ github.event.pull_request.base.sha }}'
@@ -50,7 +52,7 @@ jobs:
     strategy:
       matrix:
         workspace: ${{ fromJSON(needs.find-changed-workspaces.outputs.workspaces) }}
-        node-version: [18.x, 20.x]
+        node-version: [20, 22]
       fail-fast: false
     defaults:
       run:
@@ -76,7 +78,7 @@ jobs:
           ref: ${{ github.event.workflow_run.head_branch }}
 
       - name: Set up Node ${{ matrix.node-version }}
-        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v4
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ matrix.node-version }}
           registry-url: https://registry.npmjs.org/ # Needed for auth
@@ -141,9 +143,10 @@ jobs:
         with:
           ref: ${{ github.event.workflow_run.head_branch }}
       - name: Setup node
-        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v4
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
-          node-version: 20.x
+          node-version: 22
+ 
       - name: Install root dependencies
         run: yarn install --immutable
       - name: Verify lockfile duplicates
@@ -166,6 +169,8 @@ jobs:
 
   dependency-review:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
@@ -174,5 +179,9 @@ jobs:
 
       - name: "Checkout Repository"
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+
       - name: "Dependency Review"
         uses: actions/dependency-review-action@595b5aeba73380359d98a5e087f648dbb0edce1b # v4.7.3
+        with:
+          warn-only: true
+          comment-summary-in-pr: on-failure
