@@ -11,7 +11,8 @@ concurrency:
 
 permissions:
   contents: read
-
+  pull-requests: write
+  
 jobs:
   find-changed-workspaces:
     name: Detect workspace changes
@@ -168,6 +169,8 @@ jobs:
 
   dependency-review:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
@@ -176,5 +179,9 @@ jobs:
 
       - name: "Checkout Repository"
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+
       - name: "Dependency Review"
         uses: actions/dependency-review-action@595b5aeba73380359d98a5e087f648dbb0edce1b # v4.7.3
+        with:
+          warn-only: true
+          comment-summary-in-pr: on-failure
