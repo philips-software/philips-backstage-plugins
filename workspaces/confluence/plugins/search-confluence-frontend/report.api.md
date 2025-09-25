@@ -6,7 +6,7 @@
 
 import { BackstagePlugin } from '@backstage/core-plugin-api';
 import { IndexableDocument } from '@backstage/plugin-search-common';
-import { default as React_2 } from 'react';
+import { JSX as JSX_2 } from 'react/jsx-runtime';
 import { ResultHighlight } from '@backstage/plugin-search-common';
 import { SearchResultListItemExtensionProps } from '@backstage/plugin-search-react';
 
@@ -20,7 +20,7 @@ export interface ConfluenceResultItemProps {
 export const ConfluenceResultListItem: (props: SearchResultListItemExtensionProps<ConfluenceResultItemProps>) => JSX.Element | null;
 
 // @public
-export const ConfluenceSearchIcon: () => React_2.JSX.Element;
+export const ConfluenceSearchIcon: () => JSX_2.Element;
 
 // @public
 export const searchConfluenceFrontendPlugin: BackstagePlugin<    {}, {}, {}>;
