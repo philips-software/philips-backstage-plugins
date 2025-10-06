@@ -1,5 +1,11 @@
 # @philips-software/backstage-plugin-search-confluence-frontend
 
+## 2.5.0
+
+### Minor Changes
+
+- ed6d8a8: Added support for the new frontend system
+
 ## 2.4.3
 
 ### Patch Changes
