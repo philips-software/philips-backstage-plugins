@@ -25,10 +25,6 @@ on:
 concurrency:
   group: ${{ github.workflow }}-${{ inputs.workspace }}
 
-permissions:
-  contents: write
-  actions: write
-
 jobs:
   changesets-pr:
     name: Update Version Packages PR for ${{ inputs.workspace }}
@@ -47,9 +43,18 @@ jobs:
         with:
           egress-policy: audit
 
+      - uses: actions/create-github-app-token@v2
+        id: app-token
+        with:
+          app-id: ${{ secrets.BACKSTAGE_BOT_APPLICATION_ID }}
+          private-key: ${{ secrets.BACKSTAGE_BOT_PRIVATE_KEY }}
+  
       - name: Checkout
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v4
-        
+        with:
+          fetch-depth: 0
+          token: ${{ steps.app-token.outputs.token }}
+
       - name: Set up Node
         uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v4
         with:
