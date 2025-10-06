@@ -1,6 +1,6 @@
 {
   "name": "@philips-software/backstage-plugin-search-confluence-frontend",
-  "version": "2.4.3",
+  "version": "2.5.0",
   "exports": {
     ".": "./src/index.ts",
     "./alpha": "./src/alpha.tsx",
