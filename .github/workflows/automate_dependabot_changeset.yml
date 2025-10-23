@@ -34,9 +34,10 @@ jobs:
           git config --global user.name 'Github changeset workflow'
 
       - name: Set up Node
-        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v5
+        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
         with:
           node-version: 22
+          package-manager-cache: false
  
       - name: Fetch previous commit for check
         run: git fetch origin '${{ github.event.pull_request.base.sha }}'
