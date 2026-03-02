@@ -22,6 +22,9 @@ on:
         required: true
         type: string
 
+permissions: 
+  id-token: write
+
 concurrency:
   group: ${{ github.workflow }}-${{ inputs.workspace }}
 
@@ -58,7 +61,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v4
         with:
-          node-version: 22
+          node-version: 24
           registry-url: https://registry.npmjs.org/ # Needed for auth
 
       - name: Get yarn cache directory path
@@ -124,7 +127,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v4
         with:
-          node-version: 22
+          node-version: 24
           registry-url: https://registry.npmjs.org/ # Needed for auth
 
       - name: Get yarn cache directory path
@@ -150,7 +153,4 @@ jobs:
 
       - name: publish
         run: |
-          yarn config set -H 'npmAuthToken' "${{secrets.NPM_TOKEN}}"
           yarn workspaces foreach --all -v --no-private npm publish --access public --tolerate-republish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
