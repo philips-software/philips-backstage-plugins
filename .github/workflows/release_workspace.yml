@@ -61,7 +61,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v4
         with:
-          node-version: 22
+          node-version: 24
           registry-url: https://registry.npmjs.org/ # Needed for auth
 
       - name: Get yarn cache directory path
@@ -127,7 +127,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v4
         with:
-          node-version: 22
+          node-version: 24
           registry-url: https://registry.npmjs.org/ # Needed for auth
 
       - name: Get yarn cache directory path
