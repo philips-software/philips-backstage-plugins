@@ -9687,7 +9687,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/request@npm:^2.47.1, @types/request@npm:^2.48.8":
+"@types/request@npm:2.48.12":
   version: 2.48.12
   resolution: "@types/request@npm:2.48.12"
   dependencies:
@@ -9696,6 +9696,18 @@ __metadata:
     "@types/tough-cookie": "npm:*"
     form-data: "npm:^2.5.0"
   checksum: 10/a7b3f9f14cacc18fe235bb8e57eff1232a04bd3fa3dad29371f24a5d96db2cd295a0c8b6b34ed7efa3efbbcff845febb02c9635cd68c54811c947ea66ae22090
+  languageName: node
+  linkType: hard
+
+"@types/request@patch:@types/request@npm%3A2.48.12#~/.yarn/patches/@types-request-npm-2.48.12-d921ef35cb.patch":
+  version: 2.48.12
+  resolution: "@types/request@patch:@types/request@npm%3A2.48.12#~/.yarn/patches/@types-request-npm-2.48.12-d921ef35cb.patch::version=2.48.12&hash=435ce4"
+  dependencies:
+    "@types/caseless": "npm:*"
+    "@types/node": "npm:*"
+    "@types/tough-cookie": "npm:*"
+    form-data: "npm:^2.5.0"
+  checksum: 10/a20827ae210cd302ca683e3e4539d11051c49e54f1508ec4124c70fa9b92b65b0460dafb98e205f7c8bab3888e9ebf17770f22ad61c6b354b1263c5bbc115e13
   languageName: node
   linkType: hard
 
@@ -23949,9 +23961,11 @@ __metadata:
   linkType: hard
 
 "psl@npm:^1.1.28":
-  version: 1.9.0
-  resolution: "psl@npm:1.9.0"
-  checksum: 10/d07879d4bfd0ac74796306a8e5a36a93cfb9c4f4e8ee8e63fbb909066c192fe1008cd8f12abd8ba2f62ca28247949a20c8fb32e1d18831d9e71285a1569720f9
+  version: 1.15.0
+  resolution: "psl@npm:1.15.0"
+  dependencies:
+    punycode: "npm:^2.3.1"
+  checksum: 10/5e7467eb5196eb7900d156783d12907d445c0122f76c73203ce96b148a6ccf8c5450cc805887ffada38ff92d634afcf33720c24053cb01d5b6598d1c913c5caf
   languageName: node
   linkType: hard
 
