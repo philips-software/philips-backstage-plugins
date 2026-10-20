@@ -50,6 +50,7 @@
     "@yarnpkg/core": "4.9.1",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "esbuild": "^0.25.0",
     "material-ui-popup-state": "5.3.6",
     "ws": "^8.17.1",
     "@types/request@npm:^2.47.1": "patch:@types/request@npm%3A2.48.12#~/.yarn/patches/@types-request-npm-2.48.12-d921ef35cb.patch",
