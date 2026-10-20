@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": "18 || 20"
+    "node": "22 || 24"
   },
   "scripts": {
     "tsc": "tsc",
@@ -33,10 +33,15 @@
   },
   "devDependencies": {
     "@backstage/cli": "backstage:^",
+    "@backstage/cli-defaults": "backstage:^",
     "@backstage/e2e-test-utils": "backstage:^",
     "@backstage/repo-tools": "backstage:^",
     "@changesets/cli": "^2.29.5",
+    "@jest/environment-jsdom-abstract": "~30.2.0",
     "@spotify/prettier-config": "^15.0.0",
+    "@types/jest": "^30.0.0",
+    "jest": "~30.2.0",
+    "jsdom": "^27.1.0",
     "node-gyp": "^11.2.0",
     "prettier": "^3.6.2",
     "typescript": "~5.8.3"
