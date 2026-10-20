@@ -42,11 +42,13 @@
     "@playwright/test": "^1.45.1",
     "@spotify/prettier-config": "^15.0.0",
     "prettier": "^3.3.3",
-    "typescript": "~5.5.3"
+    "typescript": "~5.8.0"
   },
   "devDependencies": {
+    "@backstage/cli-defaults": "^0.1.6",
     "@jest/environment-jsdom-abstract": "^30.5.2",
     "@types/jsdom": "^30",
+    "esbuild": "^0.28.2",
     "jest": "^30.5.2",
     "jsdom": "^27.1.0"
   }
