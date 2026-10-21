@@ -1,45 +1,19 @@
-# Backstage Confluence Search Collator Plugin
+# Backstage Confluence Search Frontend Plugin
 
-This plugin integrates Confluence documents into Backstage's search engine, enabling users to search for and retrieve Confluence content directly from Backstage App
+This frontend plugin integrates Confluence documents into Backstage search results. It adds a Confluence result type filter and renders Confluence search results with their last-updated details and ancestor breadcrumbs.
 
-Note: it is used in combination with its [backend counter-part](../search-confluence-backend/README.md).
+It is used in combination with its [backend counterpart](../search-confluence-backend/README.md).
 
 Search Results:
 ![Search results](./docs/confluence.png)
 
 ## Installation
 
-Add the plugin to your frontend app:
+Add the package as a dependency of an app using the [new frontend system](https://backstage.io/docs/frontend-system/). Enable package discovery in `app-config.yaml`:
 
+```yaml
+app:
+  packages: all
 ```
-@philips-software/backstage-plugin-search-confluence-frontend
-```
 
-Add The Confluence Search Component to : `packages/app/src/components/search/SearchPage.tsx `
-
-```tsx
-// packages/app/src/components/search/SearchPage.tsx
-
-import {
-  ConfluenceSearchIcon,
-  ConfluenceResultListItem,
-} from '@philips-software/backstage-plugin-search-confluence-frontend';;
-
-// ...
-<SearchType.Accordion
-  name="Result Type"
-  types={[
-    // ...
-    {
-      value: 'confluence',
-      name: 'Confluence',
-      icon: <ConfluenceSearchIcon />,
-    },
-  ]}
-/>
-
-<SearchResult>
-  // ...
-  <ConfluenceResultListItem />
-</SearchResult>
-```
+The plugin uses the [`SearchResultListItem` extension blueprint](https://backstage.io/docs/frontend-system/building-plugins/common-extension-blueprints/#searchresultlistitem---example), so no legacy search-page component registration or explicit extension configuration is required.

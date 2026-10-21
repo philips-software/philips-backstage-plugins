@@ -2954,7 +2954,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/core-plugin-api@backstage:1.55.3, @backstage/core-plugin-api@npm:^1.12.10":
+"@backstage/core-plugin-api@npm:^1.12.10":
   version: 1.12.10
   resolution: "@backstage/core-plugin-api@npm:1.12.10"
   dependencies:
@@ -3663,7 +3663,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/theme@backstage:1.55.3, @backstage/theme@npm:^0.7.3":
+"@backstage/theme@npm:^0.7.3":
   version: 0.7.3
   resolution: "@backstage/theme@npm:0.7.3"
   dependencies:
@@ -7171,13 +7171,11 @@ __metadata:
     "@backstage/cli": "backstage:^"
     "@backstage/core-app-api": "backstage:^"
     "@backstage/core-components": "backstage:^"
-    "@backstage/core-plugin-api": "backstage:^"
     "@backstage/dev-utils": "backstage:^"
     "@backstage/frontend-plugin-api": "backstage:^"
     "@backstage/plugin-search-common": "backstage:^"
     "@backstage/plugin-search-react": "backstage:^"
     "@backstage/test-utils": "backstage:^"
-    "@backstage/theme": "backstage:^"
     "@material-ui/core": "npm:^4.12.4"
     "@material-ui/icons": "npm:^4.11.3"
     "@material-ui/lab": "npm:^4.0.0-alpha.61"
@@ -7191,7 +7189,6 @@ __metadata:
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-router-dom: "npm:^6.23.1"
-    react-use: "npm:^17.6.0"
   peerDependencies:
     react: ^16.13.1 || ^17.0.0 || ^18.0.0
     react-dom: ^16.13.1 || ^17.0.2
@@ -24619,7 +24616,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-use@npm:^17.2.4, react-use@npm:^17.3.2, react-use@npm:^17.6.0":
+"react-use@npm:^17.2.4, react-use@npm:^17.3.2":
   version: 17.6.0
   resolution: "react-use@npm:17.6.0"
   dependencies:

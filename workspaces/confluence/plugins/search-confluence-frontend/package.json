@@ -2,12 +2,12 @@
   "name": "@philips-software/backstage-plugin-search-confluence-frontend",
   "version": "2.5.0",
   "exports": {
-    ".": "./src/index.ts",
+    ".": "./src/alpha.tsx",
     "./alpha": "./src/alpha.tsx",
     "./package.json": "./package.json"
   },
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "src/alpha.tsx",
+  "types": "src/alpha.tsx",
   "typesVersions": {
     "*": {
       "alpha": [
@@ -46,15 +46,12 @@
   },
   "dependencies": {
     "@backstage/core-components": "backstage:^",
-    "@backstage/core-plugin-api": "backstage:^",
     "@backstage/frontend-plugin-api": "backstage:^",
     "@backstage/plugin-search-common": "backstage:^",
     "@backstage/plugin-search-react": "backstage:^",
-    "@backstage/theme": "backstage:^",
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
-    "@material-ui/lab": "^4.0.0-alpha.61",
-    "react-use": "^17.6.0"
+    "@material-ui/lab": "^4.0.0-alpha.61"
   },
   "peerDependencies": {
     "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
