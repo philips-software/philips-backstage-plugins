@@ -45,6 +45,7 @@
     "yn": "^5.0.0"
   },
   "devDependencies": {
+    "@backstage/backend-test-utils": "backstage:^",
     "@backstage/cli": "backstage:^",
     "@types/supertest": "^6.0.3",
     "supertest": "^7.1.2"

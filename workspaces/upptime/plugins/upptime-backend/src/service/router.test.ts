@@ -12,7 +12,7 @@ import {
   UrlReaderServiceReadTreeResponse,
   UrlReaderServiceReadTreeResponseFile,
 } from '@backstage/backend-plugin-api';
-import { createMockLogger } from '../testUtils';
+import { mockServices } from '@backstage/backend-test-utils';
 
 describe('createRouter', () => {
   let app: express.Express;
@@ -51,7 +51,7 @@ describe('createRouter', () => {
     jest.resetAllMocks();
     auth.getPluginRequestToken.mockResolvedValue({ token: 'mytoken' });
     const router = await createRouter({
-      logger: createMockLogger(),
+      logger: mockServices.logger.mock(),
       catalog: catalogApi,
       config,
       reader: mockUrlReader,
@@ -67,12 +67,12 @@ describe('createRouter', () => {
           response: express.Response,
           _next: express.NextFunction,
         ) => {
-          let statusCode = 500;
-          if (error instanceof NotFoundError) {
-            statusCode = 404;
-          } else if (error instanceof InputError) {
-            statusCode = 400;
-          }
+          const statusCode =
+            error instanceof NotFoundError
+              ? 404
+              : error instanceof InputError
+                ? 400
+                : 500;
 
           response.status(statusCode).json({
             error: { message: error.message },
