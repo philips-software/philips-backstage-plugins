@@ -1,10 +1,6 @@
-# [Backstage](https://backstage.io)
+# Confluence Plugin Deprecated and  Removed
 
-This is your newly scaffolded Backstage App, Good Luck!
+The functionality provided by this plugin is available in the Backstage Community Confluence Plugin
 
-To start the app, run:
+https://github.com/backstage/community-plugins/tree/main/workspaces/confluence
 
-```sh
-yarn install
-yarn dev
-```
