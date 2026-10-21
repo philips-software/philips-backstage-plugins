@@ -1,0 +1,7 @@
+diff --git a/readme.md b/readme.md
+index 412a2c2..d310321 100644
+--- a/readme.md
++++ b/readme.md
+@@ -1,1 +1,1 @@
+-<div align="center">
++<div align="center" data-yarn-patch="workaround">

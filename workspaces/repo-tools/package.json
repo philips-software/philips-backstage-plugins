@@ -36,12 +36,21 @@
     ]
   },
   "dependencies": {
-    "@backstage/cli": "backstage:^",
-    "@backstage/repo-tools": "backstage:^",
+    "@backstage/cli": "^0.36.6",
+    "@backstage/repo-tools": "^0.19.1",
     "@changesets/cli": "^2.27.7",
     "@playwright/test": "^1.45.1",
     "@spotify/prettier-config": "^15.0.0",
     "prettier": "^3.3.3",
-    "typescript": "~5.5.3"
-  }
+    "typescript": "~5.8.0"
+  },
+  "devDependencies": {
+    "@backstage/cli-defaults": "^0.1.6",
+    "@jest/environment-jsdom-abstract": "^30.5.2",
+    "@types/jsdom": "^30",
+    "esbuild": "^0.28.2",
+    "jest": "^30.5.2",
+    "jsdom": "^27.1.0"
+  },
+  "packageManager": "yarn@4.18.1"
 }
