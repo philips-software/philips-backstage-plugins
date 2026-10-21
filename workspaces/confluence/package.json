@@ -33,7 +33,6 @@
   },
   "devDependencies": {
     "@backstage/cli": "backstage:^",
-    "@backstage/cli-defaults": "backstage:^",
     "@backstage/e2e-test-utils": "backstage:^",
     "@backstage/plugin-auth-backend": "backstage:^",
     "@backstage/plugin-auth-backend-module-guest-provider": "backstage:^",
@@ -41,6 +40,7 @@
     "@changesets/cli": "^2.29.5",
     "@jest/environment-jsdom-abstract": "^30.0.4",
     "@spotify/prettier-config": "^15.0.0",
+    "@types/jest": "^30.0.0",
     "@types/jsdom": "^30.0.0",
     "jsdom": "^27.1.0",
     "node-gyp": "^11.2.0",
