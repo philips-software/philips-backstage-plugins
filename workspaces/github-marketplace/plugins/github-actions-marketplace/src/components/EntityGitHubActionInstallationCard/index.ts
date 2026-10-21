@@ -1,0 +1,1 @@
+export { EntityGitHubActionInstallationCard } from './EntityGitHubActionInstallationCard';
