@@ -1,8 +1,8 @@
-import { mockServices } from '@backstage/backend-test-utils';
 import { UpptimeAPI } from './UpptimeAPI';
 import { ConfigReader } from '@backstage/config';
+import { createMockLogger } from '../testUtils';
 
-const logger = mockServices.logger.mock();
+const logger = createMockLogger();
 
 const defaultConfig = new ConfigReader({
   upptime: {
