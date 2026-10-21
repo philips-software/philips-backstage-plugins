@@ -1,4 +1,3 @@
-import { errorHandler } from '@backstage/backend-common';
 import express from 'express';
 import Router from 'express-promise-router';
 import { CatalogApi } from '@backstage/catalog-client';
@@ -137,7 +136,6 @@ export async function createRouter(
     res.end(imgBuffer);
   });
 
-  router.use(errorHandler());
   return router;
 
   async function resolveEntityAndGetAnnotation(

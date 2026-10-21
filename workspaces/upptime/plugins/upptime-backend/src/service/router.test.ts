@@ -4,6 +4,7 @@ import { Entity } from '@backstage/catalog-model';
 import { createRouter } from './router';
 import { ConfigReader } from '@backstage/config';
 import { CatalogApi } from '@backstage/catalog-client';
+import { InputError, NotFoundError } from '@backstage/errors';
 import {
   AuthService,
   HttpAuthService,
@@ -57,7 +58,27 @@ describe('createRouter', () => {
       auth: auth as unknown as AuthService,
       httpAuth: httpAuth as unknown as HttpAuthService,
     });
-    app = express().use(router);
+    app = express()
+      .use(router)
+      .use(
+        (
+          error: Error,
+          _: express.Request,
+          response: express.Response,
+          _next: express.NextFunction,
+        ) => {
+          const statusCode =
+            error instanceof NotFoundError
+              ? 404
+              : error instanceof InputError
+                ? 400
+                : 500;
+
+          response.status(statusCode).json({
+            error: { message: error.message },
+          });
+        },
+      );
   });
 
   describe('GET /summary', () => {

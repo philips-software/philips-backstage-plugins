@@ -1,8 +1,8 @@
-import { getVoidLogger } from '@backstage/backend-common';
+import { mockServices } from '@backstage/backend-test-utils';
 import { UpptimeAPI } from './UpptimeAPI';
 import { ConfigReader } from '@backstage/config';
 
-const logger = getVoidLogger();
+const logger = mockServices.logger.mock();
 
 const defaultConfig = new ConfigReader({
   upptime: {
